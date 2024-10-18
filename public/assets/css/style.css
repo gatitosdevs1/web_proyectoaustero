@@ -80,3 +80,171 @@
         padding: 2px 6px; /* Further reduce padding for nav links on mobile */
     }
 }
+
+.section-discografia {
+    font-family: 'AR Bonnie', sans-serif; /* Fallback to sans-serif if AR Bonnie is not available */
+    font-weight: normal;
+    font-size: 70px; /* Default size for larger screens */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Optional: Add margin to give some spacing */
+}
+
+/* Adjust the font size for medium screens */
+@media (max-width: 1200px) {
+    .section-discografia {
+        font-size: 60px; /* Slightly smaller font size for medium screens */
+    }
+}
+
+/* Adjust the font size for small screens */
+@media (max-width: 768px) {
+    .section-discografia {
+        font-size: 50px; /* Smaller font size for tablets and small screens */
+    }
+}
+
+/* Adjust the font size for extra small screens */
+@media (max-width: 480px) {
+    .section-discografia {
+        font-size: 40px; /* Further reduction for very small screens */
+    }
+}
+
+
+/* Player layout with 15px margin around the image */
+.player {
+    background-color: #141311;
+    padding: 15px;  /* Set 15px padding around the image */
+    border-radius: 15px;
+    text-align: center;
+    width: 200px; /* Adjust card width based on image size + 15px padding */
+    margin: 0 auto; /* Center the player card */
+}
+
+/* Image size and layout */
+.player img {
+    width: 170px;   /* Image size set to create 15px margin */
+    height: 170px;  /* Ensure it's square */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;  /* Small margin below the image */
+}
+
+/* Info section */
+.info {
+    color: #E1E1E6;
+    text-align: left;  /* Align text to the left */
+    padding-left: 5px;  /* Small padding for the text */
+    margin-bottom: 8px;
+}
+
+.info h1 {
+    font-size: 18px;  /* Adjust font size */
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.info p {
+    opacity: 0.68;
+    font-size: 14px;  /* Adjusted font size */
+}
+
+/* Play button */
+.play-button {
+    color: #8A8280;
+    padding: 8px;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.play-button i {
+    font-size: 25px;  /* Reduced icon size */
+}
+
+/* Change color on hover */
+.play-button:hover {
+    color: #ffffff;
+}
+
+/* Track progress bar */
+.track-time {
+    padding-top: 8px;
+}
+
+.track {
+    position: relative;
+    height: 5px;
+    background: #d9d9d9;
+    border-radius: 10px;
+    opacity: 0.3;
+    overflow: hidden;
+}
+
+.track::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;  /* Example width for progress */
+    height: 100%;
+    background: #d9d9d9;
+    border-radius: 10px;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 9px;
+    color: gainsboro;
+}
+
+/* Responsive Scaling - adjusts sizes on smaller screens */
+@media (min-width: 768px) {
+    .player {
+        width: 180px;  /* Slightly smaller width for medium screens */
+        padding: 12px;  /* Reduced padding on smaller screens */
+    }
+
+    .player img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info h1 {
+        font-size: 16px;
+    }
+
+    .info p {
+        font-size: 13px;
+    }
+
+    .play-button i {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .player {
+        width: 200px;  /* Set width for large screens */
+        padding: 15px;  /* Maintain 15px padding on large screens */
+    }
+
+    .player img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .info h1 {
+        font-size: 18px;
+    }
+
+    .info p {
+        font-size: 14px;
+    }
+
+    .play-button i {
+        font-size: 25px;
+    }
+}
