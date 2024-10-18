@@ -248,7 +248,7 @@
         font-size: 25px;
     }
 }
-/* Bio paulo */
+/* Bio paulo x*/
 @font-face {
   font-family: "AR BONNIE";
   src: url("../fonts/ARBONNIE.ttf") format("truetype");
@@ -257,7 +257,11 @@
 #biografia,
 #contacto-rider {
   background: linear-gradient(to bottom, #dcd8d6, #8a8280);
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
+  max-height: 100%;
+}
+#biografia .row {
+  align-items: center;
 }
 .titulo {
   padding: 1.5rem 0;
@@ -269,8 +273,11 @@
 }
 #imagen-bio {
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.3);
-
-  width: 100%;
+  /* height: 90vh;
+  width: auto; */
+  display: block;
+  margin: auto;
+  width: 70%;
   height: auto;
 }
 #texto-bio p {
@@ -296,7 +303,9 @@
 }
 .card-form {
   text-align: left;
-  background-color: #423d3a;
+  /* background-color: #423d3a; */
+  background-image: url("../img/prueba.png");
+  background-size: cover;
   color: #dcd8d6;
   padding: 2rem;
   border-radius: 20px;
@@ -310,7 +319,6 @@
 .card-form h6 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 2.5rem;
 }
 .card-form label {
   margin-left: 10px;
@@ -339,6 +347,11 @@ textarea {
 textarea {
   min-height: 9rem;
 }
+.input-text:focus,
+textarea:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* backdrop-filter: blur(10px); */
+}
 
 .submit-container {
   display: flex;
@@ -346,16 +359,15 @@ textarea {
   padding-top: 2rem;
 }
 #submit-btn {
-  background-color: transparent;
+  background-color: #000000;
   border: 1px solid #dcd8d6;
   color: #dcd8d6;
   font-size: 1.2rem;
   font-weight: 600;
 }
 #submit-btn:hover {
-  color: #424242;
-  background-color: #000000;
-  border: none;
+  color: #000000;
+  background-color: #dcd8d6;
 }
 #rider {
   text-align: center;
@@ -369,7 +381,7 @@ textarea {
 } */
 #rider-img {
   margin-top: 1rem;
-  width: 90%;
+  width: 70%;
   height: auto;
 }
 /* contacto paulo */
