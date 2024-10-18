@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "AR BONNIE";
+    src: url("../fonts/ARBONNIE.ttf") format("truetype");
+}
+
+
+
+.bg-rrss {
+    background-color: darkgray;
+}
