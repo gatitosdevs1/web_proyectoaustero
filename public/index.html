@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/public/assets/css/style.css">
-</head>
-<body>
-    
-
-  <!-- PRUEBA NUMERO 2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Paulo, google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /paulo -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- PRUEBA NUMERO 2 -->
     <!--1  navbar -->
 
     <nav class="navbar navbar-expand-lg " id="snavbar">
@@ -45,12 +54,72 @@
       </nav>
 
     <!--1 navbar -->
-    
-    <!--2 inicio/carousel/logo //maria-->
-    <!--2 inicio/carousel/logo //maria-->
 
-    <!--3 biografia //paulo-->
-    <!--3 biografia //paulo-->
+    <!--2 inicio/carousel/logo -->
+    <!--2 inicio/carousel/logo -->
+
+    <!--3 biografia  paulo-->
+    <section id="biografia" class="px-5">
+      <h2 class="titulo">BIOGRAFÍA</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <img
+            id="imagen-bio"
+            src="assets/img/Poster_bio.png"
+            alt="Poster austero"
+          />
+        </div>
+        <div id="texto-bio" class="col-lg-6">
+          <p>
+            Somos una banda de rock alternativo formada en septiembre de 2022,
+            con el simple afán de hacer buena música y de canalizar nuestras
+            vivencias y emociones a través de nuestro sonido.
+          </p>
+          <p>
+            ¿De qué trata nuestra música? Amor, tristeza, reflexión, melancolía.
+            Buscamos que sea una proyección de lo que vivimos, plasmando las
+            emociones de nuestras vivencias a flor de piel. La música nos mueve,
+            nos llena de vida y crear nos apasiona. Buscamos hacer algo original
+            e independiente, en donde creamos, producimos y difundimos nuestros
+            temas.
+          </p>
+          <p>
+            Somos capaces de aquello, y por lo mismo nos esforzamos en dejar un
+            registro profesional de nuestra música, esperando que pueda ser oído
+            por ti y quien quiera. Sería maravilloso poder acompañarte siendo
+            parte de tu playlist diario.
+          </p>
+          <p>
+            Proyecto Austero surge desde lo espontáneo, en ensayos semanales en
+            la comuna de Santiago, cuya formación original era de sólo 2
+            integrantes: Willy en la guitarra y voz, y JP en la batería,
+            secuencias y producción de los temas. Es así como el 14 de enero del
+            año 2023 es publicado el primer sencillo de la banda, que da
+            comienzo a esta gran historia: Calla.
+          </p>
+          <p>
+            Con el paso del tiempo fueron surgiendo nuevas creaciones, hasta que
+            alcanzamos otro gran hito al publicar junto con el sexto sencillo
+            (En Contra el Viento) el primer videoclip el 25 de agosto de 2023,
+            cuyo productor, Fred (Aaron), pasa a formar parte de la banda como
+            bajista en el año 2024. Finalmente, en ese mismo año se suma la
+            segunda guitarra a Proyecto Austero, Hugo Riveros, completando la
+            formación vigente de la banda.
+          </p>
+          <p>
+            En la actualidad contamos con 10 temas propios, disponibles en las
+            plataformas digitales de música vigentes.
+          </p>
+          <p>
+            Si nos escuchaste y te gusta lo que hacemos, síguenos, suscríbete,
+            dale like y comparte nuestra música si crees que podemos ser una
+            propuesta interesante a alguien que conozcas.
+          </p>
+          <p>Un abrazo, esperamos ser parte de tu vida.</p>
+        </div>
+      </div>
+    </section>
+    <!--3 biografia -->
 
     <!--4 discografia -->
       <div>
@@ -211,19 +280,85 @@
       
 
     <!--4 discografia -->
-    
+
+    <!--5 formulario contacto/ridertecnico //paulopaulo -->
+    <section id="contacto-rider">
+      <div class="row">
+        <article class="col-lg-6">
+          <h2 class="titulo">CONTACTO</h2>
+          <div id="card-form-container">
+            <div class="card-form">
+              <h6>Si deseas contratarnos<br />¡Contáctanos!</h6>
+              <form id="contact-form">
+                <label for="name">Nombre</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  title="Ingresa tu nombre"
+                  placeholder="Nombre"
+                  required
+                  class="input-text"
+                />
+
+                <label for="email">Email</label>
+                <p id="email-error" class="pt-1 d-none">
+                  ¡Ingrese un email válido!
+                </p>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  title="Ingresa tu email"
+                  placeholder="Email"
+                  required
+                  class="input-text"
+                />
+
+                <label for="message">Mensaje</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  title="Escribe tu mensaje"
+                  placeholder="Mensaje"
+                  required
+                  aria-checked="true"
+                  rows="5"
+                ></textarea>
+                <div class="submit-container">
+                  <input
+                    type="submit"
+                    value="Enviar"
+                    class="btn"
+                    id="submit-btn"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </article>
+        <article id="rider" class="col-lg-6">
+          <h2 class="titulo">RIDER TÉCNICO</h2>
+          <h5>CLICK EN LA IMAGEN PARA CONOCER NUESTRO RIDER TÉCNICO</h5>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><img id="rider-img" src="assets/img/rider.png" alt="Llave de sol"
+          /></a>
+        </article>
+      </div>
+    </section>
     <!--5 formulario contacto/ridertecnico //paulo-->
-    <!--5 formulario contacto/ridertecnico //paulo-->
 
-    <!--6 sigue nuestras redes sociales //maria-->
-    <!--6 sigue nuestras redes sociales //maria-->
-    
-    <!--7 footer desarrollado por //maria-->
-    <!--7 footer desarrollado por //maria-->
+    <!--6 sigue nuestras redes sociales -->
+    <!--6 sigue nuestras redes sociales -->
 
-   
+    <!--7 footer desarrollado por-->
+    <!--7 footer desarrollado por-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="/public/assets/js/app.js"></script>
-</body>
+  </body>
 </html>
