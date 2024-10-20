@@ -1,3 +1,5 @@
+/* CSS ANAHENNA */
+
 /* Define AR Bonnie font */
 @font-face {
     font-family: 'AR Bonnie';
@@ -248,7 +250,11 @@
         font-size: 25px;
     }
 }
-/* Bio paulo x*/
+
+/* CSS ANAHENNA */
+
+/* CSS PAULO  */
+
 @font-face {
   font-family: "AR BONNIE";
   src: url("../fonts/ARBONNIE.ttf") format("truetype");
@@ -384,4 +390,5 @@ textarea:focus {
   width: 70%;
   height: auto;
 }
-/* contacto paulo */
+
+/* CSS PAULO  */
