@@ -399,4 +399,105 @@ textarea:focus {
 
 /* CSS PAULO */
 
-/* CSS PAULO  */
+/* CSS PAULO  *//* CSS MARIA */
+
+@font-face {
+    font-family: "AR BONNIE";
+    src: url("../assets/fonts/ARBONNIE.ttf") format("truetype");
+}
+
+body {
+    font-family: 'AR BONNIE', sans-serif;
+    /* Usa tu fuente con un respaldo */
+}
+
+/* Estilos generales para el slider */
+.slider {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    /* Para mantener la proporción de las imágenes */
+}
+
+/* Botones de control */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    /* Ajustar el tamaño de los botones */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100% 100%;
+    /* Asegura que los iconos se adapten al contenedor */
+}
+
+/* Estilos responsivos usando media queries */
+@media (max-width: 768px) {
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+        /* Hacer los controles más grandes en pantallas pequeñas */
+    }
+
+    .carousel-indicators {
+        bottom: -20px;
+        /* Ajustar la posición de los indicadores */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+        /* Para asegurar que las imágenes no se distorsionen */
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 15%;
+        /* Hacer los controles aún más grandes en pantallas móviles */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: 80% 80%;
+    }
+
+    .carousel-indicators {
+        bottom: -10px;
+        /* Ajuste más fino para pantallas móviles */
+    }
+}
+
+/* REDES SOCIALES */
+
+.redes h2 {
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+
+}
+
+.redes .text-center a {
+    margin: 0 15px;
+}
+
+iframe {
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS MARIA */
