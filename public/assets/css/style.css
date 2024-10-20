@@ -1,3 +1,5 @@
+/* CSS MARIA */
+
 @font-face {
     font-family: "AR BONNIE";
     src: url("../assets/fonts/ARBONNIE.ttf") format("truetype");
@@ -96,3 +98,5 @@ iframe {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* CSS MARIA */
