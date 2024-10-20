@@ -514,3 +514,58 @@ iframe {
 }
 
 /* CSS MARIA */
+
+
+/* FOOTER EXAMPLE */
+
+.footer {
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #343a40; /* Texto oscuro */
+    padding: 10px 20px; /* Pequeño padding en ambos lados */
+    font-family: 'Arial', sans-serif; /* Fuente sobria y común */
+    font-size: 0.8rem; /* Tamaño de letra más pequeño */
+    font-weight: normal; /* Eliminar cualquier negrita */
+}
+
+.footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer .list-inline-item {
+    margin-right: 10px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Flexbox para distribuir contenido */
+.footer .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer a {
+    color: #555555; /* Gris oscuro para los íconos de LinkedIn */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #333333; /* Un gris aún más oscuro al pasar el mouse */
+}
+
+.footer i {
+    font-size: 1.2rem; /* Tamaño del ícono de LinkedIn */
+    vertical-align: middle;
+}
+
+
+
+
+
+
+/* FOOTER EXAMPLE */
