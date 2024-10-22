@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="author"
+      content="Anahenna Sanchez - María Salgado - Paulo Nadales / GatitosDevs"
+    />
+    <title>ProyectoAustero</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo_navbar_mini.png"
+      type="image/x-icon"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -44,12 +53,12 @@
       <div class="container-fluid">
         <img
           src="/public/assets/img/logo_navbar.png"
-          alt=""
+          alt="Logo Austero"
           class="navbar-logo ms-3"
         />
         <img
           src="/public/assets/img/logo_navbar_mini.png"
-          alt=""
+          alt="Logo Austero"
           class="navbar-logo-mini ms-3"
         />
         <button
@@ -66,19 +75,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+              <a class="nav-link active" aria-current="page" href="">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">BIOGRAFIA</a>
+              <a class="nav-link" href="#biografia">BIOGRAFIA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">DISCOGRAFIA</a>
+              <a class="nav-link" href="#discografia">DISCOGRAFIA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONTACTANOS</a>
+              <a class="nav-link" href="#contacto-rider">CONTACTANOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">SIGUENOS</a>
+              <a class="nav-link" href="#rrss">SIGUENOS</a>
             </li>
           </ul>
         </div>
@@ -130,19 +139,39 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./assets/img/0.png" class="d-block w-100" alt="..." />
+            <img
+              src="./assets/img/0.png"
+              class="d-block w-100"
+              alt="Logo Proyecto Austero"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./assets/img/1.jpg" class="d-block w-100" alt="..." />
+            <img
+              src="./assets/img/1.jpg"
+              class="d-block w-100"
+              alt="Proyecto Austero en tocata"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./assets/img/2.jpg" class="d-block w-100" alt="..." />
+            <img
+              src="./assets/img/2.jpg"
+              class="d-block w-100"
+              alt="Guitarristas de Proyecto Austero"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./assets/img/3.jpg" class="d-block w-100" alt="..." />
+            <img
+              src="./assets/img/3.jpg"
+              class="d-block w-100"
+              alt="Baterista de Proyecto Austero"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./assets/img/4.jpg" class="d-block w-100" alt="..." />
+            <img
+              src="./assets/img/4.jpg"
+              class="d-block w-100"
+              alt="Proyecto Austero en tocata"
+            />
           </div>
         </div>
         <button
@@ -225,215 +254,237 @@
     <!--3 biografia -->
 
     <!--4 discografia1 -->
-    
-        <div>
-        <h2 class="section-discografia" id="sdiscografia">DISCOGRAFIA</h2>
-        <div class="container mt-5">
-            <div class="row g-4">
 
-                <!-- Player card 1 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 1</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
+    <section id="discografia">
+      <h2 class="section-discografia" id="sdiscografia">DISCOGRAFIA</h2>
+      <div class="container mt-5">
+        <div class="row g-4">
+          <!-- Player card 1 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 1</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
                 </div>
-
-                <!-- Player card 2 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 2</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
                 </div>
-
-                <!-- Player card 3 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 3</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
                 </div>
-
-                <!-- Player card 4 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 4</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player card 5 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 5</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player card 6 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 6</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player card 7 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 7</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Player card 8 -->
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="player">
-                        <img src="https://via.placeholder.com/170" alt="Music Cover Image">
-                        <div class="info">
-                            <h1>Song Title 8</h1>
-                        </div>
-                        <div class="track-time">
-                            <div class="track"></div>
-                            <div class="time"></div>
-                        </div>
-                        <div class="action-buttons">
-                            <div class="spotify-button">
-                                <i class="fab fa-spotify"></i>
-                            </div>
-                            <div class="play-button" id="play-pause-button">
-                                <i class="fa-solid fa-play"></i>
-                            </div>
-                            <div class="youtube-button">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+              </div>
             </div>
+          </div>
+
+          <!-- Player card 2 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 2</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 3 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 3</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 4 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 4</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 5 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 5</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 6 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 6</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 7 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 7</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Player card 8 -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="player">
+              <img
+                src="https://via.placeholder.com/170"
+                alt="Music Cover Image"
+              />
+              <div class="info">
+                <h1>Song Title 8</h1>
+              </div>
+              <div class="track-time">
+                <div class="track"></div>
+                <div class="time"></div>
+              </div>
+              <div class="action-buttons">
+                <div class="spotify-button">
+                  <i class="fab fa-spotify"></i>
+                </div>
+                <div class="play-button" id="play-pause-button">
+                  <i class="fa-solid fa-play"></i>
+                </div>
+                <div class="youtube-button">
+                  <i class="fab fa-youtube"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
     <!--4 discografia -->
 
@@ -496,7 +547,10 @@
         <article id="rider" class="col-lg-6">
           <h2 class="titulo">RIDER TÉCNICO</h2>
           <h5>CLICK EN LA IMAGEN PARA CONOCER NUESTRO RIDER TÉCNICO</h5>
-          <a href="http://" target="_blank" rel="noopener noreferrer"
+          <a
+            href="https://drive.google.com/file/d/1jdOjCnlDUFRG5Q6U0KrgN64gn0bG_Tb6/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             ><img id="rider-img" src="assets/img/rider.png" alt="Llave de sol"
           /></a>
         </article>
@@ -579,46 +633,56 @@
 
     <!--6 sigue nuestras redes sociales -->
 
-  <!--7 footer desarrollado por-->
+    <!--7 footer desarrollado por-->
 
-  <footer class="footer container-fluid py-3">
-    <div class="d-flex justify-content-between align-items-center">
+    <footer class="footer container-fluid py-3">
+      <div class="d-flex justify-content-between align-items-center">
         <div>
-            <p class="mb-0">Desarrollado con ❤️ por:</p>
-            <ul class="list-inline mb-0">
-                <li class="list-inline-item">
-                    Maria Salgado
-                    <a href="https://www.linkedin.com/in/mariasalgado" target="_blank" class="ms-2">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">|</li>
-                <li class="list-inline-item">
-                    Anahenna Sanchez
-                    <a href="https://www.linkedin.com/in/anahennasanchez" target="_blank" class="ms-2">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">|</li>
-                <li class="list-inline-item">
-                    Paulo Nadales
-                    <a href="https://www.linkedin.com/in/paulonadales" target="_blank" class="ms-2">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
+          <p class="mb-0">Desarrollado con ❤️ por:</p>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              Maria Salgado
+              <a
+                href="https://www.linkedin.com/in/mariasalgado"
+                target="_blank"
+                class="ms-2"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">|</li>
+            <li class="list-inline-item">
+              Anahenna Sanchez
+              <a
+                href="https://www.linkedin.com/in/anahennasanchez"
+                target="_blank"
+                class="ms-2"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">|</li>
+            <li class="list-inline-item">
+              Paulo Nadales
+              <a
+                href="https://www.linkedin.com/in/paulonadales"
+                target="_blank"
+                class="ms-2"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
         </div>
         <div>
-            <p class="mb-0">&copy; 2024 GatitosDevs. Todos los derechos reservados.</p>
+          <p class="mb-0">
+            &copy; 2024 GatitosDevs. Todos los derechos reservados.
+          </p>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-
-
-
-
-  <!--7 footer desarrollado por-->
+    <!--7 footer desarrollado por-->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

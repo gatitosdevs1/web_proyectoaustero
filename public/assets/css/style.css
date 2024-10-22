@@ -7,6 +7,11 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  font-family: "AR BONNIE", sans-serif;
+}
+
+/* NavBar */
 
 /* Apply the AR Bonnie font to the navbar and links */
 .navbar,
@@ -41,11 +46,11 @@
 }
 
 .navbar-logo {
-    max-width: 160px;
-    max-height: 80px;
-    height: auto;
-    display: block;
-    transition: max-width 0.3s ease;
+  max-width: 160px;
+  max-height: 80px;
+  height: auto;
+  display: block;
+  transition: max-width 0.3s ease;
 }
 
 .navbar-logo-mini {
@@ -74,13 +79,129 @@
     padding: 2px 6px;
   }
 }
+/* //NavBar */
 
+/* Hero section */
+/* Estilos generales para el slider */
+.slider {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  /* Para mantener la proporción de las imágenes */
+}
+
+/* Botones de control */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  /* Ajustar el tamaño de los botones */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  /* Asegura que los iconos se adapten al contenedor */
+}
+
+/* Estilos responsivos usando media queries */
+@media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    /* Hacer los controles más grandes en pantallas pequeñas */
+  }
+
+  .carousel-indicators {
+    bottom: -20px;
+    /* Ajustar la posición de los indicadores */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    /* Para asegurar que las imágenes no se distorsionen */
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+    /* Hacer los controles aún más grandes en pantallas móviles */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 80% 80%;
+  }
+
+  .carousel-indicators {
+    bottom: -10px;
+    /* Ajuste más fino para pantallas móviles */
+  }
+}
+/* //Hero section */
+
+/* Biography */
+#biografia,
+#contacto-rider {
+  background: linear-gradient(to bottom, #dcd8d6, #8a8280);
+  /* padding-bottom: 2rem; */
+  max-height: 100%;
+  /* margin: 60px; */
+}
+
+#biografia .row {
+  align-items: center;
+}
+.titulo {
+  padding: 1.5rem 0;
+  font-family: "AR BONNIE", sans-serif;
+  text-align: center;
+}
+#biografia h2 {
+  font-size: 5rem;
+}
+#imagen-bio {
+  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.3);
+  /* height: 90vh;
+  width: auto; */
+  display: block;
+  margin: auto;
+  width: 70%;
+  height: auto;
+}
+#texto-bio p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.1rem; /*o 1.5rem*/
+
+  text-align: center;
+}
+@media (max-width: 991px) {
+  #texto-bio {
+    margin-top: 3rem;
+  }
+}
+/* //Biography */
+
+/* Discografía */
+#discografia {
+  background: linear-gradient(to top, #dcd8d6, #8a8280);
+}
 .section-discografia {
-    font-family: 'AR Bonnie', sans-serif;
-    font-weight: normal;
-    font-size: 70px;
-    text-align: center;
-    margin: 60px 0;
+  font-family: "AR Bonnie", sans-serif;
+  font-weight: normal;
+  font-size: 70px;
+  text-align: center;
+  padding: 60px 0;
 }
 
 @media (max-width: 1200px) {
@@ -260,66 +381,9 @@
     font-size: 25px;
   }
 }
+/* //Discografía */
 
-/* CSS ANAHENNA */
-
-/* CSS PAULO  */
-/* body {
-  background: linear-gradient(to top, #dcd8d6, #8a8280);
-} */
-@font-face {
-  font-family: "AR BONNIE";
-  src: url("../fonts/ARBONNIE.ttf") format("truetype");
-}
-
-#biografia,
-#contacto-rider {
-  background: linear-gradient(to bottom, #dcd8d6, #8a8280);
-  /* padding-bottom: 2rem; */
-  max-height: 100%;
-  margin: 60px;
-}
-#discografia {
-  background: linear-gradient(to top, #dcd8d6, #8a8280);
-}
-#discografia {
-  background: linear-gradient(to top, #dcd8d6, #8a8280);
-}
-#biografia .row {
-  align-items: center;
-}
-.titulo {
-  padding: 1.5rem 0;
-  font-family: "AR BONNIE", sans-serif;
-  text-align: center;
-}
-#biografia h2 {
-  font-size: 5rem;
-}
-#imagen-bio {
-  box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.3);
-  /* height: 90vh;
-  width: auto; */
-  display: block;
-  margin: auto;
-  width: 70%;
-  height: auto;
-}
-#texto-bio p {
-  font-family: "Barlow Condensed", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 1.1rem; /*o 1.5rem*/
-
-  text-align: center;
-}
-@media (max-width: 991px) {
-  #texto-bio {
-    margin-top: 3rem;
-  }
-}
-/* Bio */
-/* contacto paulo */
+/* Contacto-Ryder */
 #contacto-rider h2 {
   font-size: 4rem;
 }
@@ -334,7 +398,7 @@
 .card-form {
   text-align: left;
   /* background-color: #423d3a; */
-  background-image: url("../img/prueba.png");
+  background-image: url("../img/grunge.png");
   background-size: cover;
   color: #dcd8d6;
   padding: 2rem;
@@ -447,6 +511,16 @@ textarea:focus {
   margin: auto;
   padding: 1rem;
 }
+@media (max-width: 991px) {
+  #form-response {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  #form-response {
+    width: 70%;
+  }
+}
 #form-response h6 {
   font-size: 1.7rem;
 }
@@ -481,86 +555,7 @@ textarea:focus {
     transform: scale(1);
   }
 }
-/* CSS PAULO */
-
-/* CSS PAULO  */
-
-/* CSS MARIA */
-
-@font-face {
-  font-family: "AR BONNIE";
-  src: url("../fonts/ARBONNIE.ttf") format("truetype");
-}
-
-body {
-  font-family: "AR BONNIE", sans-serif;
-  /* Usa tu fuente con un respaldo */
-}
-
-/* Estilos generales para el slider */
-.slider {
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-inner img {
-  width: 100%;
-  height: auto;
-  /* Para mantener la proporción de las imágenes */
-}
-
-/* Botones de control */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-  /* Ajustar el tamaño de los botones */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 100% 100%;
-  /* Asegura que los iconos se adapten al contenedor */
-}
-
-/* Estilos responsivos usando media queries */
-@media (max-width: 768px) {
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 10%;
-    /* Hacer los controles más grandes en pantallas pequeñas */
-  }
-
-  .carousel-indicators {
-    bottom: -20px;
-    /* Ajustar la posición de los indicadores */
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-inner img {
-    width: 100%;
-    height: auto;
-    /* Para asegurar que las imágenes no se distorsionen */
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 15%;
-    /* Hacer los controles aún más grandes en pantallas móviles */
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-size: 80% 80%;
-  }
-
-  .carousel-indicators {
-    bottom: -10px;
-    /* Ajuste más fino para pantallas móviles */
-  }
-}
+/* //Contacto-Ryder */
 
 /* REDES SOCIALES */
 #rrss {
@@ -568,8 +563,8 @@ body {
 }
 
 .redes h2 {
-    margin-top: 60px;
-    margin-bottom: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -587,60 +582,53 @@ iframe {
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* CSS MARIA */
-
+/* //REDES SOCIALES */
 
 /* FOOTER EXAMPLE */
 
 .footer {
-    background-color: #f8f9fa; /* Fondo claro */
-    color: #343a40; /* Texto oscuro */
-    padding: 10px 20px; /* Pequeño padding en ambos lados */
-    font-family: 'Arial', sans-serif; /* Fuente sobria y común */
-    font-size: 0.8rem; /* Tamaño de letra más pequeño */
-    font-weight: normal; /* Eliminar cualquier negrita */
+  background-color: #dcd8d6; /* Fondo claro */
+  color: #343a40; /* Texto oscuro */
+  padding: 10px 20px; /* Pequeño padding en ambos lados */
+  font-family: "Arial", sans-serif; /* Fuente sobria y común */
+  font-size: 0.8rem; /* Tamaño de letra más pequeño */
+  font-weight: normal; /* Eliminar cualquier negrita */
 }
 
 .footer ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .footer .list-inline-item {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .footer p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 /* Flexbox para distribuir contenido */
 .footer .d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .footer a {
-    color: #555555; /* Gris oscuro para los íconos de LinkedIn */
-    text-decoration: none;
+  color: #555555; /* Gris oscuro para los íconos de LinkedIn */
+  text-decoration: none;
 }
 
 .footer a:hover {
-    color: #333333; /* Un gris aún más oscuro al pasar el mouse */
+  color: #333333; /* Un gris aún más oscuro al pasar el mouse */
 }
 
 .footer i {
-    font-size: 1.2rem; /* Tamaño del ícono de LinkedIn */
-    vertical-align: middle;
+  font-size: 1.2rem; /* Tamaño del ícono de LinkedIn */
+  vertical-align: middle;
 }
 
-
-
-
-
-
-/* FOOTER EXAMPLE */
+/* //FOOTER EXAMPLE */
