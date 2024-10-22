@@ -1,8 +1,32 @@
 // Contact-form
-// alert("desde js");
+
+//Para mostrar el mensaje en el modal
+function formResponse(head, body, loader) {
+  const messageHead = document.querySelector("#form-response h6");
+  const messageBody = document.querySelector("#form-response p");
+  const resMessage = document.getElementById("form-response");
+  loader.classList.add("d-none");
+  resMessage.classList.remove("d-none");
+  messageHead.innerHTML = head;
+  messageBody.innerHTML = body;
+}
+//salir del modal
+const resButton = document.querySelector("#form-response button");
+resButton.addEventListener("click", () => {
+  const resView = document.getElementById("form-loader");
+  resView.classList.add("d-none");
+});
+
+//Enviar el mensaje
 const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  const resView = document.getElementById("form-loader");
+  const loader = document.getElementById("img-form-loader");
+  resView.classList.remove("d-none");
+  loader.classList.remove("d-none");
+
   const formData = new FormData(contactForm);
   //cambiar ruta para deploy
   fetch("http://localhost/PruebaPHPmailer/send_mail.php", {
@@ -11,17 +35,27 @@ contactForm.addEventListener("submit", function (e) {
   })
     .then((response) => {
       if (!response.ok) {
-        alert("Hubo un error!");
+        formResponse("Hubo un error", "Por favor inténtelo más tarde", loader);
+        console.log("ma");
+        console.log(response);
+        // alert("Hubo un error!");
       } else {
         return response.json();
       }
     })
     .then((data) => {
       if (data.message) {
-        alert(data.message);
+        formResponse(
+          data.message,
+          "Nos contactaremos contigo lo antes posible.",
+          loader
+        );
+
+        // alert(data.message);
       }
     })
     .catch((error) => {
+      formResponse("Hubo un error", "Por favor inténtelo más tarde", loader);
       console.error("Error:", error);
     });
 });

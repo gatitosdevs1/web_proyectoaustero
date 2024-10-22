@@ -56,7 +56,7 @@ try {
     $mail->send();
     // echo '¡Correo enviado con éxito!';
     http_response_code(200);
-    echo json_encode(['message' => '¡Correo enviado con éxito!']);
+    echo json_encode(['message' => '¡Mensaje enviado!']);
 } catch (Exception $e) {
     // echo "Hubo un problema al enviar el correo: {$mail->ErrorInfo}";
     http_response_code(500);

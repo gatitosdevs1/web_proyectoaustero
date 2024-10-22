@@ -2,41 +2,42 @@
 
 /* Define AR Bonnie font */
 @font-face {
-    font-family: 'AR Bonnie';
-    src: url('/public/assets/fonts/AR_Bonnie.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "AR Bonnie";
+  src: url("../fonts/AR_Bonnie.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Apply the AR Bonnie font to the navbar and links */
-.navbar, .navbar-nav .nav-link {
-    font-family: 'AR Bonnie', sans-serif;
-    font-weight: normal;
+.navbar,
+.navbar-nav .nav-link {
+  font-family: "AR Bonnie", sans-serif;
+  font-weight: normal;
 }
 
 /* General navbar styling */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2px 10px;
-    background-color: #8A8280;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 10px;
+  background-color: #8a8280;
 }
 
 .navbar-nav .nav-link.active {
-    color: #000000;
+  color: #000000;
 }
 
 .navbar-nav .nav-link {
-    color: #FFF9F9;
-    font-size: px;
-    padding: 2px 8px;
+  color: #fff9f9;
+  font-size: 20px;
+  padding: 2px 8px;
 }
 
 .navbar .container-fluid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-logo {
@@ -48,30 +49,30 @@
 }
 
 .navbar-logo-mini {
-    display: none;
-    max-width: 50px;
-    height: auto;
-    transition: max-width 0.3s ease;
+  display: none;
+  max-width: 50px;
+  height: auto;
+  transition: max-width 0.3s ease;
 }
 
 @media (max-width: 768px) {
-    .navbar-logo {
-        display: none;
-    }
+  .navbar-logo {
+    display: none;
+  }
 
-    .navbar-logo-mini {
-        display: block;
-        max-height: 25px;
-    }
+  .navbar-logo-mini {
+    display: block;
+    max-height: 25px;
+  }
 
-    .navbar {
-        padding: 1px 8px;
-    }
+  .navbar {
+    padding: 1px 8px;
+  }
 
-    .navbar-nav .nav-link {
-        font-size: 16px;
-        padding: 2px 6px;
-    }
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    padding: 2px 6px;
+  }
 }
 
 .section-discografia {
@@ -83,187 +84,189 @@
 }
 
 @media (max-width: 1200px) {
-    .section-discografia {
-        font-size: 60px;
-    }
+  .section-discografia {
+    font-size: 60px;
+  }
 }
 
 @media (max-width: 768px) {
-    .section-discografia {
-        font-size: 50px;
-    }
+  .section-discografia {
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 480px) {
-    .section-discografia {
-        font-size: 40px;
-    }
+  .section-discografia {
+    font-size: 40px;
+  }
 }
 
 /* Player layout */
 .player {
-    background-color: #141311;
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    width: 200px;
-    margin: 0 auto;
+  background-color: #141311;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .player img {
-    width: 170px;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 /* Info section */
 .info {
-    color: #E1E1E6;
-    text-align: left;
-    padding-left: 5px;
-    margin-bottom: 8px;
+  color: #e1e1e6;
+  text-align: left;
+  padding-left: 5px;
+  margin-bottom: 8px;
 }
 
 .info h1 {
-    font-size: 18px;
-    line-height: 1.2;
-    margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 5px;
 }
 
 .info p {
-    opacity: 0.68;
-    font-size: 14px;
+  opacity: 0.68;
+  font-size: 14px;
 }
 
 /* Action buttons container to hold Spotify, Play, and YouTube buttons */
 .action-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 /* Spotify button (left) */
 .spotify-button {
-    color: #1DB954;
-    font-size: 20px;
-    cursor: pointer;
+  color: #1db954;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .spotify-button:hover {
-    color: #1ed760;
+  color: #1ed760;
 }
 
 /* YouTube button (right) */
 .youtube-button {
-    color: #FF0000;
-    font-size: 20px;
-    cursor: pointer;
+  color: #ff0000;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .youtube-button:hover {
-    color: #ff4d4d;
+  color: #ff4d4d;
 }
 
 /* Play button (middle) */
 .play-button {
-    color: #8A8280;
-    font-size: 25px;
-    cursor: pointer;
+  color: #8a8280;
+  font-size: 25px;
+  cursor: pointer;
 }
 
 .play-button:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* Track progress bar */
 .track-time {
-    padding-top: 8px;
+  padding-top: 8px;
 }
 
 .track {
-    position: relative;
-    height: 5px;
-    background: #d9d9d9;
-    border-radius: 10px;
-    opacity: 0.3;
-    overflow: hidden;
+  position: relative;
+  height: 5px;
+  background: #d9d9d9;
+  border-radius: 10px;
+  opacity: 0.3;
+  overflow: hidden;
 }
 
 .track::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;  /* Example width for progress */
-    height: 100%;
-    background: #d9d9d9;
-    border-radius: 10px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%; /* Example width for progress */
+  height: 100%;
+  background: #d9d9d9;
+  border-radius: 10px;
 }
 
 .time {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 6px;
-    font-size: 9px;
-    color: gainsboro;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 9px;
+  color: gainsboro;
 }
 
 /* Responsive Scaling - adjusts sizes on smaller screens */
 @media (min-width: 768px) {
-    .player {
-        width: 180px;
-        padding: 12px;
-    }
+  .player {
+    width: 180px;
+    padding: 12px;
+  }
 
-    .player img {
-        width: 150px;
-        height: 150px;
-    }
+  .player img {
+    width: 150px;
+    height: 150px;
+  }
 
-    .info h1 {
-        font-size: 16px;
-    }
+  .info h1 {
+    font-size: 16px;
+  }
 
-    .info p {
-        font-size: 13px;
-    }
+  .info p {
+    font-size: 13px;
+  }
 
-    .play-button i {
-        font-size: 22px;
-    }
+  .play-button i {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .player {
-        width: 200px;
-        padding: 15px;
-    }
+  .player {
+    width: 200px;
+    padding: 15px;
+  }
 
-    .player img {
-        width: 170px;
-        height: 170px;
-    }
+  .player img {
+    width: 170px;
+    height: 170px;
+  }
 
-    .info h1 {
-        font-size: 18px;
-    }
+  .info h1 {
+    font-size: 18px;
+  }
 
-    .info p {
-        font-size: 14px;
-    }
+  .info p {
+    font-size: 14px;
+  }
 
-    .play-button i {
-        font-size: 25px;
-    }
+  .play-button i {
+    font-size: 25px;
+  }
 }
 
 /* CSS ANAHENNA */
 
 /* CSS PAULO  */
-
+/* body {
+  background: linear-gradient(to top, #dcd8d6, #8a8280);
+} */
 @font-face {
   font-family: "AR BONNIE";
   src: url("../fonts/ARBONNIE.ttf") format("truetype");
@@ -271,10 +274,16 @@
 
 #biografia,
 #contacto-rider {
-  /* background: linear-gradient(to bottom, #dcd8d6, #8a8280); */
+  background: linear-gradient(to bottom, #dcd8d6, #8a8280);
   /* padding-bottom: 2rem; */
   max-height: 100%;
   margin: 60px;
+}
+#discografia {
+  background: linear-gradient(to top, #dcd8d6, #8a8280);
+}
+#discografia {
+  background: linear-gradient(to top, #dcd8d6, #8a8280);
 }
 #biografia .row {
   align-items: center;
@@ -380,14 +389,16 @@ textarea:focus {
   justify-content: center;
   padding-top: 2rem;
 }
-#submit-btn {
+#submit-btn,
+#form-response button {
   background-color: #000000;
   border: 1px solid #dcd8d6;
   color: #dcd8d6;
   font-size: 1.2rem;
   font-weight: 600;
 }
-#submit-btn:hover {
+#submit-btn:hover,
+#form-response button:hover {
   color: #000000;
   background-color: #dcd8d6;
 }
@@ -407,6 +418,69 @@ textarea:focus {
   height: auto;
 }
 
+#form-loader {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+#img-form-loader {
+  margin: auto;
+  width: 20%;
+  height: auto;
+  animation: throb 1.5s linear infinite;
+}
+#form-response {
+  background-color: #000000;
+  border-radius: 10px;
+  width: 33%;
+  height: auto;
+  color: #ffffff;
+  margin: auto;
+  padding: 1rem;
+}
+#form-response h6 {
+  font-size: 1.7rem;
+}
+#form-response hr {
+  color: #dcd8d6;
+}
+#form-response p {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+}
+#form-response button {
+  /* background-color: #dcd8d6; */
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  font-weight: 500;
+  /* border: none; */
+}
+
+@keyframes throb {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(0.9);
+  }
+  66% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 /* CSS PAULO */
 
 /* CSS PAULO  */
@@ -414,82 +488,84 @@ textarea:focus {
 /* CSS MARIA */
 
 @font-face {
-    font-family: "AR BONNIE";
-    src: url("../assets/fonts/ARBONNIE.ttf") format("truetype");
+  font-family: "AR BONNIE";
+  src: url("../fonts/ARBONNIE.ttf") format("truetype");
 }
 
 body {
-    font-family: 'AR BONNIE', sans-serif;
-    /* Usa tu fuente con un respaldo */
+  font-family: "AR BONNIE", sans-serif;
+  /* Usa tu fuente con un respaldo */
 }
 
 /* Estilos generales para el slider */
 .slider {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .carousel-inner img {
-    width: 100%;
-    height: auto;
-    /* Para mantener la proporción de las imágenes */
+  width: 100%;
+  height: auto;
+  /* Para mantener la proporción de las imágenes */
 }
 
 /* Botones de control */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 5%;
-    /* Ajustar el tamaño de los botones */
+  width: 5%;
+  /* Ajustar el tamaño de los botones */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-size: 100% 100%;
-    /* Asegura que los iconos se adapten al contenedor */
+  background-size: 100% 100%;
+  /* Asegura que los iconos se adapten al contenedor */
 }
 
 /* Estilos responsivos usando media queries */
 @media (max-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+    /* Hacer los controles más grandes en pantallas pequeñas */
+  }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 10%;
-        /* Hacer los controles más grandes en pantallas pequeñas */
-    }
-
-    .carousel-indicators {
-        bottom: -20px;
-        /* Ajustar la posición de los indicadores */
-    }
+  .carousel-indicators {
+    bottom: -20px;
+    /* Ajustar la posición de los indicadores */
+  }
 }
 
 @media (max-width: 480px) {
-    .carousel-inner img {
-        width: 100%;
-        height: auto;
-        /* Para asegurar que las imágenes no se distorsionen */
-    }
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    /* Para asegurar que las imágenes no se distorsionen */
+  }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 15%;
-        /* Hacer los controles aún más grandes en pantallas móviles */
-    }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+    /* Hacer los controles aún más grandes en pantallas móviles */
+  }
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-size: 80% 80%;
-    }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-size: 80% 80%;
+  }
 
-    .carousel-indicators {
-        bottom: -10px;
-        /* Ajuste más fino para pantallas móviles */
-    }
+  .carousel-indicators {
+    bottom: -10px;
+    /* Ajuste más fino para pantallas móviles */
+  }
 }
 
 /* REDES SOCIALES */
+#rrss {
+  background: linear-gradient(to top, #dcd8d6, #8a8280);
+}
 
 .redes h2 {
     margin-top: 60px;
@@ -497,20 +573,19 @@ body {
 }
 
 .card {
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 400px;
-
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
 }
 
 .redes .text-center a {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 iframe {
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* CSS MARIA */
