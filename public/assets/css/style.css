@@ -139,17 +139,13 @@ body {
   height: 100%;
 }
 .carousel-item {
-  /* object-fit: cover; */
   width: 100%;
   height: 100%;
 }
 .carousel-img {
   object-fit: cover;
-  /* min-width: 100%;
-  max-height: 100%; */
   width: 100%;
   height: 100%;
-  /* Para mantener la proporción de las imágenes */
 }
 
 /* Botones de control */
@@ -157,7 +153,6 @@ body {
 .carousel-control-next {
   height: 100%;
   width: 5%;
-  /* Ajustar el tamaño de los botones */
 }
 
 .carousel-control-prev-icon,
@@ -670,55 +665,21 @@ iframe {
 }
 /* //REDES SOCIALES */
 
-/* FOOTER EXAMPLE */
-
-.footer {
-  background-color: #dcd8d6; /* Fondo claro */
-  color: #343a40; /* Texto oscuro */
-  padding: 10px 20px; /* Pequeño padding en ambos lados */
-  font-family: "Arial", sans-serif; /* Fuente sobria y común */
-  font-size: 0.8rem; /* Tamaño de letra más pequeño */
-  font-weight: normal; /* Eliminar cualquier negrita */
+/* FOOTER */
+footer {
+  background-color: #dcd8d6;
+  font-family: "Arial", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+#footer-line {
+  margin: 1rem 25%;
 }
 
-.footer ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+/* //FOOTER */
 
-.footer .list-inline-item {
-  margin-right: 10px;
-}
-
-.footer p {
-  margin: 5px 0;
-}
-
-/* Flexbox para distribuir contenido */
-.footer .d-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.footer a {
-  color: #555555; /* Gris oscuro para los íconos de LinkedIn */
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #333333; /* Un gris aún más oscuro al pasar el mouse */
-}
-
-.footer i {
-  font-size: 1.2rem; /* Tamaño del ícono de LinkedIn */
-  vertical-align: middle;
-}
-
-/* //FOOTER EXAMPLE */
-
+/* Botón inicio */
 #back-top {
   height: 3rem;
   width: 3rem;
@@ -728,7 +689,7 @@ iframe {
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 100;
+  z-index: 50;
   color: #000000;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -742,3 +703,57 @@ iframe {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 3rem;
 }
+/* //Botón inicio */
+
+/* modal devs */
+#modal-gatitos {
+  height: 100vh;
+  width: 100vw;
+  /* justify-content: center; */
+  font-family: "Barlow Condensed", sans-serif;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#dev-card {
+  position: relative;
+  text-align: center;
+  color: #dcd8d6;
+  background-color: rgba(0, 0, 0, 0.96);
+  border-radius: 15px;
+  margin: 0 7rem;
+  padding: 1rem 0;
+}
+#closeM {
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+#closeM:hover,
+#btn-dev:hover {
+  cursor: pointer;
+}
+
+#dev-card h6 {
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+.dev {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.dev p {
+  padding-right: 1rem;
+}
+.dev a {
+  padding-left: 0.2rem;
+  color: #dcd8d6;
+}
+/* //modal devs */

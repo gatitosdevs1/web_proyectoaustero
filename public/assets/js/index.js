@@ -80,3 +80,22 @@ arrow.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
+
+//ModalDev
+const btnDev = document.getElementById("btn-dev");
+const modalDev = document.getElementById("modal-gatitos");
+const btnClose = document.getElementById("closeM");
+btnDev.addEventListener("click", function () {
+  // modalDev.classList.remove("d-none");
+
+  // modalDev.classList.remove("fade");
+  modalDev.style.zIndex = "100";
+  modalDev.classList.add("show");
+});
+btnClose.addEventListener("click", function () {
+  // modalDev.classList.remove("d-none");
+
+  // modalDev.classList.remove("fade");
+  modalDev.classList.remove("show");
+  modalDev.style.zIndex = "-1";
+});
