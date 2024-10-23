@@ -143,35 +143,35 @@
           <div class="carousel-item active">
             <img
               src="./assets/img/0.png"
-              class="d-block w-100"
+              class="carousel-img"
               alt="Logo Proyecto Austero"
             />
           </div>
           <div class="carousel-item">
             <img
               src="./assets/img/1.jpg"
-              class="d-block w-100"
+              class="carousel-img sepia"
               alt="Proyecto Austero en tocata"
             />
           </div>
           <div class="carousel-item">
             <img
               src="./assets/img/2.jpg"
-              class="d-block w-100"
+              class="carousel-img sepia"
               alt="Guitarristas de Proyecto Austero"
             />
           </div>
           <div class="carousel-item">
             <img
               src="./assets/img/3.jpg"
-              class="d-block w-100"
+              class="carousel-img sepia"
               alt="Baterista de Proyecto Austero"
             />
           </div>
           <div class="carousel-item">
             <img
               src="./assets/img/4.jpg"
-              class="d-block w-100"
+              class="carousel-img sepia"
               alt="Proyecto Austero en tocata"
             />
           </div>
@@ -355,7 +355,7 @@
     <!--6 sigue nuestras redes sociales -->
     <!-- <section id="rrss" class="redes bg-rrss container-fluid py-3">
       <div class="row justify-content-center">
-        <div class="col-10">
+        <!-- <div class="col-10">
           <h2 class="text-center">SIGUE NUESTRAS REDES SOCIALES</h2>
 
           <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
@@ -391,21 +391,41 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="col-12 mt-5 text-center">
-          <h2>SIGUENOS EN NUESTRAS PLATAFORMAS MUSICALES</h2>
-          <div>
+          <h2>SIGUE NUESTRA REDES SOCIALES</h2>
+          <div id="rrss-icon-container" class="container">
+            <a
+              href="https://www.facebook.com/proyectoaustero"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="rrss-icon fa-brands fa-square-facebook"></i
+            ></a>
             <a
               href="https://open.spotify.com/intl-es/artist/3BKSXPjZx4LSMToAoqQGEK?si=Ioq3yJynT9GMSwo2U71UbA"
               target="_blank"
             >
-              <i class="fa-brands fa-spotify fa-5x text-black mx-3"></i>
-            </a>
+              <i class="rrss-icon fa-brands fa-spotify"></i
+            ></a>
 
             <a href="https://www.youtube.com/@proyectoaustero" target="_blank">
-              <i class="fa-brands fa-youtube fa-5x text-black mx-3"></i>
-            </a>
+              <i class="rrss-icon fa-brands fa-youtube"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@proyectoausteroba"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="rrss-icon fa-brands fa-tiktok"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/proyectoaustero?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="rrss-icon fa-brands fa-instagram"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -414,11 +434,59 @@
     <!--6 sigue nuestras redes sociales -->
 
     <!--7 footer desarrollado por-->
+    <footer>
+      <p class="mb-0">
+        &copy; 2024 Proyecto Austero. Todos los derechos reservados.
+      </p>
+      <hr id="footer-line" />
+      <p id="btn-dev" class="mb-0">Desarrollado con ❤️ por GatitosDevs</p>
+    </footer>
 
-    <footer class="footer container-fluid py-3">
+    <div id="modal-gatitos" class="fade">
+      <div id="dev-card">
+        <i id="closeM" class="fa-solid fa-xmark"></i>
+        <h6>GatitosDevs</h6>
+        <span class="dev">
+          <p>Anahenna Sanchez</p>
+          <a
+            href="https://www.linkedin.com/in/anahenna/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+        <span class="dev">
+          <p>María Salgado</p>
+          <a
+            href="https://www.linkedin.com/in/maria-salgado-salgado-76587a23b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+        <span class="dev">
+          <p>Paulo Nadales</p>
+          <a
+            href="https://www.linkedin.com/in/pnadales"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="http://" target="_blank" rel="noopener noreferrer"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </span>
+      </div>
+    </div>
+    <!-- <footer class="footer container-fluid py-3">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <p class="mb-0">Desarrollado con ❤️ por:</p>
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
               Maria Salgado
@@ -460,7 +528,7 @@
           </p>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!--7 footer desarrollado por-->
     <span id="back-top" href="" class="fade">
