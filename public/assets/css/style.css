@@ -83,29 +83,86 @@ body {
 
 /* Hero section */
 /* Estilos generales para el slider */
+@media (min-width: 992px) {
+  nav {
+    height: 8vh;
+  }
+  .slider {
+    height: 92vh;
+    width: auto;
+  }
+}
+@media (max-width: 992px) {
+  .slider {
+    height: 60vh;
+    width: auto;
+  }
+}
+@media (max-width: 768px) {
+  .slider {
+    height: 50vh;
+    width: auto;
+  }
+}
+@media (max-width: 576px) {
+  .slider {
+    height: 40vh;
+    width: auto;
+  }
+}
+@media (max-width: 490px) {
+  .slider {
+    height: 25vh;
+    width: auto;
+  }
+}
 .slider {
-  width: 100%;
+  width: 100vw;
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  vertical-align: middle;
 }
-
-.carousel-inner img {
+.slide {
   width: 100%;
-  height: auto;
+}
+.sepia {
+  filter: sepia();
+}
+.carousel-inner {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+.carousel-item {
+  /* object-fit: cover; */
+  width: 100%;
+  height: 100%;
+}
+.carousel-img {
+  object-fit: cover;
+  /* min-width: 100%;
+  max-height: 100%; */
+  width: 100%;
+  height: 100%;
   /* Para mantener la proporción de las imágenes */
 }
 
 /* Botones de control */
 .carousel-control-prev,
 .carousel-control-next {
+  height: 100%;
   width: 5%;
   /* Ajustar el tamaño de los botones */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-size: 100% 100%;
+  /* background-size: 100% 100%; */
   /* Asegura que los iconos se adapten al contenedor */
 }
 
@@ -563,8 +620,37 @@ textarea:focus {
 }
 
 .redes h2 {
+  font-size: 4rem;
   margin-top: 60px;
   margin-bottom: 30px;
+}
+#rrss-icon-container {
+  padding: 10rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#rrss-icon-container a {
+  width: 5rem;
+}
+@media (max-width: 770px) {
+  #rrss-icon-container a {
+    flex: 1 1 20%;
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 770px) {
+  #rrss-icon-container a {
+    flex: 1 1 20%;
+    margin-top: 4rem;
+  }
+}
+.rrss-icon {
+  font-size: 5rem;
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #000000;
 }
 
 .card {
