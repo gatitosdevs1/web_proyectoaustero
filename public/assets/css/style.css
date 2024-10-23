@@ -155,7 +155,6 @@ body {
   width: 5%;
 }
 
-
 /* Estilos responsivos usando media queries */
 @media (max-width: 768px) {
   .carousel-control-prev,
@@ -195,6 +194,18 @@ body {
 }
 /* //Hero section */
 
+#biografia,
+#discografia,
+#contacto-rider,
+#rrss {
+  padding-top: 3.5rem;
+}
+
+/* Tamaño para todos los títulos */
+h2 {
+  font-size: 4rem;
+}
+
 /* Biography */
 #biografia,
 #contacto-rider {
@@ -208,13 +219,10 @@ body {
   align-items: center;
 }
 .titulo {
-  padding: 1.5rem 0;
-  font-family: "AR BONNIE", sans-serif;
+  padding-bottom: 1.5rem;
   text-align: center;
 }
-#biografia h2 {
-  font-size: 5rem;
-}
+
 #imagen-bio {
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.3);
   /* height: 90vh;
@@ -242,13 +250,13 @@ body {
 /* Discografía */
 #discografia {
   background: linear-gradient(to top, #dcd8d6, #8a8280);
+  padding-bottom: 1rem;
 }
 .section-discografia {
   font-family: "AR Bonnie", sans-serif;
   font-weight: normal;
-  font-size: 70px;
   text-align: center;
-  padding: 60px 0;
+  padding-bottom: 3rem;
 }
 
 @media (max-width: 1200px) {
@@ -277,7 +285,7 @@ body {
   text-align: center;
   width: 200px;
   margin: 0 auto;
-  position: relative;  /* Required for positioning icons */
+  position: relative; /* Required for positioning icons */
 }
 
 /* Keep the image size unchanged */
@@ -292,7 +300,7 @@ body {
 /* Info section - Keep the current size */
 .info {
   color: #e1e1e6;
-  margin-bottom: 10px;  /* Extra space to accommodate the action buttons */
+  margin-bottom: 10px; /* Extra space to accommodate the action buttons */
   text-align: left;
 }
 
@@ -301,7 +309,7 @@ body {
   line-height: 1.2;
   margin-bottom: 5px;
   margin-top: 2px;
-  text-align: center;  /* Centered text inside the player card */
+  text-align: center; /* Centered text inside the player card */
 }
 
 /* Action buttons container */
@@ -313,7 +321,7 @@ body {
   position: center;
   bottom: 5px;
   width: 100%;
-  padding: 0 20px;  /* Ensure buttons stay inside the card */
+  padding: 0 20px; /* Ensure buttons stay inside the card */
 }
 
 /* Spotify button (left) */
@@ -332,7 +340,7 @@ body {
   color: #8a8280;
   font-size: 24px;
   cursor: pointer;
-  margin: 0 auto;  /* Ensures centering by default */
+  margin: 0 auto; /* Ensures centering by default */
 }
 
 .play-button:hover {
@@ -384,25 +392,27 @@ body {
 
 /* Smaller buttons on smaller screens */
 @media (max-width: 768px) {
-  .spotify-button, .youtube-button, .play-button {
+  .spotify-button,
+  .youtube-button,
+  .play-button {
     font-size: 12px; /* Adjust button size for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .spotify-button, .youtube-button, .play-button {
+  .spotify-button,
+  .youtube-button,
+  .play-button {
     font-size: 10px; /* Further reduce button size for mobile */
   }
 }
 
-
-
 /* //Discografía */
 
 /* Contacto-Ryder */
-#contacto-rider h2 {
+/* #contacto-rider h2 {
   font-size: 4rem;
-}
+} */
 #contacto-rider .row {
   margin: auto 0;
 }
@@ -494,7 +504,7 @@ textarea:focus {
 } */
 #rider-img {
   margin-top: 1rem;
-  width: 70%;
+  width: 60%;
   height: auto;
 }
 
@@ -578,13 +588,8 @@ textarea:focus {
   background: linear-gradient(to top, #dcd8d6, #8a8280);
 }
 
-.redes h2 {
-  font-size: 4rem;
-  margin-top: 60px;
-  margin-bottom: 30px;
-}
 #rrss-icon-container {
-  padding: 10rem 2rem;
+  padding: 10.5rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -635,7 +640,7 @@ footer {
   font-family: "Arial", sans-serif;
   font-size: 0.8rem;
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 #footer-line {
   margin: 1rem 25%;

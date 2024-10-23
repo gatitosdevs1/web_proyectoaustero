@@ -1,28 +1,29 @@
-$(document).ready(function() {
+$(document).ready(function () {
   fetchTopTracks();
 });
 
 function fetchTopTracks() {
   $.ajax({
-    url: '/web_proyecto_austero/php/get_tracks.php',  // Path to your PHP script
-    method: 'GET',
-    dataType: 'json',  // Expect JSON response, so jQuery automatically parses it
-    success: function(response) {
+    url: "/web_proyecto_austero/php/get_tracks.php", // Path to your PHP script
+    method: "GET",
+    dataType: "json", // Expect JSON response, so jQuery automatically parses it
+    success: function (response) {
       if (response.tracks) {
         displayTopTracks(response.tracks);
       } else {
-        console.error('No tracks found in the response');
+        console.error("No tracks found in the response");
       }
     },
-    error: function(err) {
-      console.log('AJAX request failed:', err);
-    }
+    error: function (err) {
+      console.log("AJAX request failed:", err);
+    },
   });
 }
 
 function displayTopTracks(tracks) {
   tracks.forEach((track, index) => {
-    if (index < 8) {  // Limiting to 8 tracks
+    if (index < 8) {
+      // Limiting to 8 tracks
       const trackName = track.name;
       const albumImage = track.album.images[0].url; // Use the first image
       const previewUrl = track.preview_url;
@@ -59,10 +60,8 @@ function displayTopTracks(tracks) {
         </div>
       </div>
     `;
-    
-    
-    
-      $('#track-cards-container').append(card);
+
+      $("#track-cards-container").append(card);
     }
   });
 }
@@ -98,10 +97,15 @@ function playPreview(previewUrl, index) {
   if (currentAudio) {
     currentAudio.pause(); // Pause the current audio
     clearInterval(progressInterval); // Clear the previous progress interval
-    const previousButton = document.getElementById(`play-pause-button-${currentTrackIndex}`);
-    const previousProgressBar = document.getElementById(`progress-bar-${currentTrackIndex}`);
-    if (previousButton) previousButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset previous button icon
-    if (previousProgressBar) previousProgressBar.style.width = '0%'; // Reset previous progress bar
+    const previousButton = document.getElementById(
+      `play-pause-button-${currentTrackIndex}`
+    );
+    const previousProgressBar = document.getElementById(
+      `progress-bar-${currentTrackIndex}`
+    );
+    if (previousButton)
+      previousButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset previous button icon
+    if (previousProgressBar) previousProgressBar.style.width = "0%"; // Reset previous progress bar
   }
 
   // Start playing a new track
@@ -122,16 +126,16 @@ function playPreview(previewUrl, index) {
       currentAudio.pause(); // Stop the audio after 20 seconds
       currentAudio.currentTime = 0; // Reset the track to the beginning
       clearInterval(progressInterval); // Stop the progress bar updates
-      progressBar.style.width = '0%'; // Reset progress bar after song ends
+      progressBar.style.width = "0%"; // Reset progress bar after song ends
       playButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset to play icon
       isPlaying = false; // Set playing status to false
     }
   }, duration * 1000); // Stop the audio after 20 seconds (20 * 1000ms)
 
-  currentAudio.addEventListener('ended', () => {
+  currentAudio.addEventListener("ended", () => {
     clearTimeout(stopPlayback); // Clear timeout in case the song ends earlier
     clearInterval(progressInterval); // Stop progress bar updates
-    progressBar.style.width = '0%'; // Reset progress bar
+    progressBar.style.width = "0%"; // Reset progress bar
     playButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset play icon
     isPlaying = false;
   });
@@ -154,10 +158,6 @@ function startProgressBar(progressBar) {
     }
   }, 100); // Update progress every 100ms
 }
-
-
-
-
 
 // Contact-form
 
