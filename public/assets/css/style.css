@@ -155,11 +155,6 @@ body {
   width: 5%;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  /* background-size: 100% 100%; */
-  /* Asegura que los iconos se adapten al contenedor */
-}
 
 /* Estilos responsivos usando media queries */
 @media (max-width: 768px) {
