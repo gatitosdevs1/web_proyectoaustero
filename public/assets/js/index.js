@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 function fetchTopTracks() {
   $.ajax({
-    url: "/web_proyecto_austero/php/get_tracks.php", // Path to your PHP script
+    url: "../../get_tracks.php", // Path to your PHP script
     method: "GET",
     dataType: "json", // Expect JSON response, so jQuery automatically parses it
     success: function (response) {
@@ -190,7 +190,7 @@ contactForm.addEventListener("submit", function (e) {
 
   const formData = new FormData(contactForm);
   //cambiar ruta para deploy
-  fetch("http://localhost/PruebaPHPmailer/send_mail.php", {
+  fetch("../../send_mail.php", {
     method: "POST",
     body: formData,
   })
@@ -211,6 +211,7 @@ contactForm.addEventListener("submit", function (e) {
           "Nos contactaremos contigo lo antes posible.",
           loader
         );
+        contactForm.reset();
 
         // alert(data.message);
       }
