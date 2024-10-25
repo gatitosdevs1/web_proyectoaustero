@@ -236,10 +236,16 @@ h2 {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.1rem; /*o 1.5rem*/
-
-  text-align: center;
+  font-size: 1.1rem;
+  text-align: justify;
 }
+
+@media (min-width: 1500px) {
+  #texto-bio p {
+    font-size: 1.3vw;
+  }
+}
+
 @media (max-width: 991px) {
   #texto-bio {
     margin-top: 3rem;
@@ -711,6 +717,17 @@ footer {
 #dev-card h6 {
   font-size: 3rem;
   padding-bottom: 1.5rem;
+}
+
+@media (max-width: 420px) {
+  #dev-card h6 {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 560px) {
+  #dev-card {
+    margin: 0 3rem;
+  }
 }
 .dev {
   display: flex;
