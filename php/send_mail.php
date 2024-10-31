@@ -12,8 +12,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use Dotenv\Dotenv;
 
-// $dotenv=Dotenv::createImmutable(__DIR__);
-$dotenv = Dotenv::createImmutable('../');
+$dotenv=Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -27,32 +26,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p><strong>Email:</strong> $email</p>
     <p><strong>Mensaje:</strong><br>$message</p>
 ";
-
-
+// Crear una nueva instancia de PHPMailer
 $mail = new PHPMailer(true);
 
 try {
-    // servidor SMTP
+    // Configuración del servidor SMTP
     $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com'; // Cambiar si ees necesario
+    $mail->Host = 'smtp.hostinger.com'; // Cambia esto si usas otro proveedor SMTP
     $mail->SMTPAuth = true;
-    $mail->Username = $_ENV['SMTP_USERNAME']; // mail
-    $mail->Password = $_ENV['SMTP_PASSWORD']; 
-    $mail->SMTPSecure = 'tls'; 
-    $mail->Port = 587; // TLS (465 para SSL)
+    $mail->Username = $_ENV['SMTP_USERNAME'];; // Tu correo electrónico
+    $mail->Password = $_ENV['SMTP_PASSWORD']; // Contraseña de aplicación generada en Google
+    $mail->SMTPSecure = 'tls'; // Usa TLS o SSL según tu configuración
+    $mail->Port = 587; // Puerto para TLS (465 para SSL)
 
-    // correo
+    // Configuración del correo
     $mail->CharSet = 'UTF-8';
-    $mail->setFrom($_ENV['SMTP_USERNAME'], 'ProyectoAustero'); // Remitente
-    $mail->addAddress('mail', 'Destinatario'); // Destinatario, agregar mail
+    $mail->setFrom($_ENV['SMTP_USERNAME'], 'cats'); // Remitente del correo
+    $mail->addAddress('proyectoausterobanda@gmail.com', 'Destinatario'); // Destinatario
     $mail->Subject = 'Nuevo mensaje de contacto';
 
-
-    $mail->isHTML(true);
+    // Contenido del correo
+    $mail->isHTML(true); // Habilitar HTML
     $mail->Body    = $body_content;
     $mail->AltBody = "Tienes un nuevo mensaje de proyectoaustero.com\nNombre: $name\nEmail: $email\nMensaje: $message\n\nEste es el texto sin formato para clientes que no soportan HTML.";
 
- 
+    // Enviar el correo
     $mail->send();
     // echo '¡Correo enviado con éxito!';
     http_response_code(200);

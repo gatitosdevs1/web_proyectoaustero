@@ -2,23 +2,23 @@ $(document).ready(function () {
   fetchTopTracks();
 });
 
-function fetchTopTracks() {
-  $.ajax({
-    url: "../../get_tracks.php", // Path to your PHP script
+$.ajax({
+    url: "../get_tracks.php",
     method: "GET",
-    dataType: "json", // Expect JSON response, so jQuery automatically parses it
+    dataType: "json", 
     success: function (response) {
-      if (response.tracks) {
-        displayTopTracks(response.tracks);
-      } else {
-        console.error("No tracks found in the response");
-      }
+        console.log("AJAX Success Response:", response);
+        if (response.tracks) {
+            displayTopTracks(response.tracks);
+        } else {
+            console.error("No tracks found in the response");
+        }
     },
     error: function (err) {
-      console.log("AJAX request failed:", err);
+        console.log("AJAX request failed:", err);
     },
-  });
-}
+});
+
 
 function displayTopTracks(tracks) {
   tracks.forEach((track, index) => {
@@ -190,7 +190,7 @@ contactForm.addEventListener("submit", function (e) {
 
   const formData = new FormData(contactForm);
   //cambiar ruta para deploy
-  fetch("../../send_mail.php", {
+  fetch("https://proyectoaustero.com/send_mail.php", {
     method: "POST",
     body: formData,
   })
