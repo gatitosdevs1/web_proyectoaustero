@@ -1,3 +1,25 @@
+/* FIX */
+
+/* Full-page background gradient for seamless section transitions */
+body {
+  font-family: "AR BONNIE", sans-serif;
+  background: linear-gradient(to bottom, #dcd8d6, #8a8280); /* Gradient colors to match existing style */
+  background-attachment: fixed; /* Keeps the gradient static during scrolling */
+  color: #000; /* Ensures text is readable on gradient */
+}
+
+/* Remove individual section backgrounds for continuity */
+#biografia,
+#discografia,
+#contacto-rider,
+#rrss {
+  background: none;
+}
+
+
+/* FIX */
+
+
 /* CSS ANAHENNA */
 
 /* Define AR Bonnie font */
@@ -209,10 +231,10 @@ h2 {
 /* Biography */
 #biografia,
 #contacto-rider {
-  background: linear-gradient(to bottom, #dcd8d6, #8a8280);
-  /* padding-bottom: 2rem; */
+  /* background: linear-gradient(to bottom, #dcd8d6, #8a8280); */
+  padding-bottom: 2rem;
   max-height: 100%;
-  /* margin: 60px; */
+  margin: 60px;
 }
 
 #biografia .row {
@@ -254,10 +276,10 @@ h2 {
 /* //Biography */
 
 /* Discografía */
-#discografia {
+/* #discografia {
   background: linear-gradient(to top, #dcd8d6, #8a8280);
   padding-bottom: 1rem;
-}
+} */
 .section-discografia {
   font-family: "AR Bonnie", sans-serif;
   font-weight: normal;
@@ -590,9 +612,9 @@ textarea:focus {
 /* //Contacto-Ryder */
 
 /* REDES SOCIALES */
-#rrss {
+/* #rrss {
   background: linear-gradient(to top, #dcd8d6, #8a8280);
-}
+} */
 
 #rrss-icon-container {
   padding: 10.5rem 2rem;
@@ -642,7 +664,7 @@ iframe {
 
 /* FOOTER */
 footer {
-  background-color: #dcd8d6;
+  background-color: #8a8280;
   font-family: "Arial", sans-serif;
   font-size: 0.8rem;
   text-align: center;
