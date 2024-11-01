@@ -244,6 +244,18 @@ body {
 
 
 
+/* Initial state for title before animation */
+.section-discografia {
+  opacity: 0;
+  transform: translateY(20px); /* Slightly lower than final position */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+/* Animated state */
+.section-discografia.show {
+  opacity: 1;
+  transform: translateY(0); /* Slides up to its final position */
+}
 
 
 #biografia,
@@ -464,6 +476,20 @@ h2 {
     font-size: 10px; /* Further reduce button size for mobile */
   }
 }
+
+/* Initial state before animation */
+.player {
+  opacity: 0;
+  transform: translateY(20px); /* Slightly lower than the final position */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+/* Animated state */
+.player.show {
+  opacity: 1;
+  transform: translateY(0); /* Slides up to its final position */
+}
+
 
 /* //Discografía */
 

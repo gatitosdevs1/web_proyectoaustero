@@ -261,3 +261,69 @@ btnClose.addEventListener("click", function () {
   modalDev.classList.remove("show");
   modalDev.style.zIndex = "-1";
 });
+
+
+// Check if element is in the viewport
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+// Check if element is in the viewport (reuse this function)
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Trigger the animation on scroll
+$(document).ready(function () {
+  // Only apply on desktop (PC) screens
+  if ($(window).width() > 768) {
+    // On scroll, check if each .player and .section-discografia is in view
+    $(window).on("scroll", function () {
+      $(".player").each(function () {
+        if (isElementInViewport(this)) {
+          $(this).addClass("show"); // Add the show class when in view
+        }
+      });
+      // Check if .section-discografia is in view
+      if (isElementInViewport($(".section-discografia")[0])) {
+        $(".section-discografia").addClass("show");
+      }
+    });
+
+    // Initial check in case elements are already in view
+    $(window).trigger("scroll");
+  }
+});
+
+
+// Trigger the animation on scroll
+$(document).ready(function () {
+  // Only apply on desktop (PC) screens
+  if ($(window).width() > 768) {
+    // On scroll, check if each .player is in view
+    $(window).on("scroll", function () {
+      $(".player").each(function () {
+        if (isElementInViewport(this)) {
+          $(this).addClass("show"); // Add the show class when in view
+        }
+      });
+    });
+
+    // Initial check in case elements are already in view
+    $(window).trigger("scroll");
+  }
+});
+
