@@ -55,33 +55,31 @@ body {
   color: #000000;
 }
 
+/* Increased font size by 4 points for all screen sizes */
 .navbar-nav .nav-link {
   color: #fff9f9;
-  font-size: 24px; /* Increased font size */
-  padding: 4px 10px;
+  font-size: 30px; /* Original was 20px, now 24px */
+  padding: 6px 12px;
 }
 
-.navbar .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
+/* Increased logo size by 4 points */
 .navbar-logo {
-  max-width: 200px; /* Increased max width */
-  max-height: 100px; /* Increased max height */
+  max-width: 180px; /* Original was 160px, now 180px */
+  max-height: 84px; /* Original was 80px, now 84px */
   height: auto;
   display: block;
   transition: max-width 0.3s ease;
 }
 
+/* Mini logo adjustments for smaller screens */
 .navbar-logo-mini {
   display: none;
-  max-width: 60px; /* Increased mini logo width */
+  max-width: 54px; /* Original was 50px, now 54px */
   height: auto;
   transition: max-width 0.3s ease;
 }
 
+/* Adjust font size and logo size for mobile screens */
 @media (max-width: 768px) {
   .navbar-logo {
     display: none;
@@ -89,19 +87,22 @@ body {
 
   .navbar-logo-mini {
     display: block;
-    max-height: 30px; /* Increased mini logo height */
+    max-height: 29px; /* Original was 25px, now 29px */
   }
 
   .navbar {
     padding: 1px 8px;
   }
 
+  /* Increased font size for mobile screens */
   .navbar-nav .nav-link {
-    font-size: 18px; /* Increased font size for smaller screens */
-    padding: 2px 6px;
+    font-size: 20px; /* Original was 16px, now 20px */
+    padding: 4px 8px;
   }
 }
 /* //NavBar */
+
+
 
 
 /* Hero section */
