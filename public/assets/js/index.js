@@ -3,22 +3,21 @@ $(document).ready(function () {
 });
 
 $.ajax({
-    url: "../get_tracks.php",
-    method: "GET",
-    dataType: "json", 
-    success: function (response) {
-        console.log("AJAX Success Response:", response);
-        if (response.tracks) {
-            displayTopTracks(response.tracks);
-        } else {
-            console.error("No tracks found in the response");
-        }
-    },
-    error: function (err) {
-        console.log("AJAX request failed:", err);
-    },
+  url: "../get_tracks.php",
+  method: "GET",
+  dataType: "json",
+  success: function (response) {
+    console.log("AJAX Success Response:", response);
+    if (response.tracks) {
+      displayTopTracks(response.tracks);
+    } else {
+      console.error("No tracks found in the response");
+    }
+  },
+  error: function (err) {
+    console.log("AJAX request failed:", err);
+  },
 });
-
 
 function displayTopTracks(tracks) {
   tracks.forEach((track, index) => {
@@ -224,10 +223,10 @@ contactForm.addEventListener("submit", function (e) {
 // Contact-form end
 
 // Back top
-const biography = document.getElementById("biografia");
+const biography = document.getElementById("discografia");
 const arrow = document.getElementById("back-top");
 window.addEventListener("scroll", function () {
-  if (biography.offsetTop <= this.scrollY) {
+  if (biography.offsetTop - 100 <= this.scrollY) {
     arrow.classList.remove("fade");
     arrow.classList.add("show");
   } else {
