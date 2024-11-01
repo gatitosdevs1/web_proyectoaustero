@@ -172,51 +172,79 @@ body {
   height: 100%;
 }
 
-/* Botones de control */
+/* Control button styles */
 .carousel-control-prev,
 .carousel-control-next {
-  height: 100%;
-  width: 5%;
+  background-color: #333333; /* Dark gray background */
+  opacity: 1; /* Full opacity */
+  border-radius: 50%; /* Circular shape */
+  width: 50px; /* Standard width */
+  height: 50px; /* Standard height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Vertical centering */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Add margin to move buttons inward */
+.carousel-control-prev {
+  margin-left: 15px; /* Adjusts distance from left edge */
+}
+
+.carousel-control-next {
+  margin-right: 15px; /* Adjusts distance from right edge */
+}
+
+/* Enlarges on hover */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  transform: translateY(-50%) scale(1.2); /* Enlarged size */
+  background-color: #555555; /* Slightly lighter gray on hover */
+}
+
+/* Customize icon inside control buttons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* Remove default image */
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: solid #ffffff; /* White arrow color */
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg); /* Base rotation for the arrow */
+}
+
+/* Rotate icons to face the correct direction */
+.carousel-control-prev-icon {
+  transform: rotate(135deg); /* Adjusted rotation for left arrow */
+}
+
+.carousel-control-next-icon {
+  transform: rotate(-45deg); /* Adjusted rotation for right arrow */
 }
 
 /* Estilos responsivos usando media queries */
 @media (max-width: 768px) {
   .carousel-control-prev,
   .carousel-control-next {
-    width: 10%;
-    /* Hacer los controles más grandes en pantallas pequeñas */
-  }
-
-  .carousel-indicators {
-    bottom: -20px;
-    /* Ajustar la posición de los indicadores */
+    width: 40px; /* Smaller size for mobile */
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .carousel-inner img {
-    width: 100%;
-    height: auto;
-    /* Para asegurar que las imágenes no se distorsionen */
-  }
-
   .carousel-control-prev,
   .carousel-control-next {
-    width: 15%;
-    /* Hacer los controles aún más grandes en pantallas móviles */
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-size: 80% 80%;
-  }
-
-  .carousel-indicators {
-    bottom: -10px;
-    /* Ajuste más fino para pantallas móviles */
+    width: 30px; /* Smaller size on smaller screens */
+    height: 30px;
   }
 }
-/* //Hero section */
+
+
+
+
 
 #biografia,
 #discografia,
