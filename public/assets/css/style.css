@@ -662,6 +662,8 @@ textarea:focus {
 }
 
 /* REDES SOCIALES */
+
+/* Redes Sociales - Social Media Icons */
 #rrss-icon-container {
   padding: 10.5rem 2rem;
   display: flex;
@@ -669,21 +671,39 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
 }
+
 #rrss-icon-container a {
   width: 5rem;
 }
+
 @media (max-width: 770px) {
   #rrss-icon-container a {
     flex: 1 1 20%;
     margin-top: 4rem;
   }
 }
+
+/* Base styling for the icons */
 .rrss-icon {
   font-size: 5rem;
-  color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #000000;
+  color: transparent; /* No color fill */
+  -webkit-text-stroke-width: 3px; /* Stroke width */
+  -webkit-text-stroke-color: #000000; /* Stroke color */
+  transition: transform 0.3s ease; /* Smooth scaling transition */
 }
+
+/* Hover effect - Desktop only */
+@media (min-width: 768px) {
+  .rrss-icon:hover {
+    transform: scale(1.2); /* Enlarge icon slightly on hover */
+    color: transparent; /* Keep color transparent */
+    -webkit-text-stroke-color: #000000; /* Keep stroke color consistent */
+  }
+}
+
+
+/* REDES SOCIALES */
+
 
 .card {
   padding: 15px;
