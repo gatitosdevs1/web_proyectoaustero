@@ -255,6 +255,50 @@ body {
   }
 }
 
+/* Initial state for the biografia title (same as discografia title) */
+#biografia .titulo {
+  opacity: 0;
+  transform: translateY(20px); /* Slightly lower than the final position */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animated state for the biografia title */
+#biografia .titulo.show {
+  opacity: 1;
+  transform: translateY(0); /* Slides up to its final position */
+}
+
+/* Initial state for bio image (left to center) */
+#biografia #imagen-bio {
+  opacity: 0;
+  transform: translateX(-50px); /* Start from the left */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Initial state for bio text (right to center) */
+#biografia #texto-bio {
+  opacity: 0;
+  transform: translateX(50px); /* Start from the right */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animated state for bio image and text when they move to the center */
+#biografia #imagen-bio.show,
+#biografia #texto-bio.show {
+  opacity: 1;
+  transform: translateX(0); /* Move to center */
+}
+
+/* Desktop-only animations */
+@media (max-width: 768px) {
+  #biografia .titulo,
+  #biografia #imagen-bio,
+  #biografia #texto-bio {
+    opacity: 1;
+    transform: none; /* No animations on mobile */
+  }
+}
+
 /* Padding adjustments */
 #biografia,
 #discografia,

@@ -326,3 +326,48 @@ $(document).ready(function () {
   }
 });
 
+$(document).ready(function () {
+  // Only apply animations on desktop screens
+  if ($(window).width() > 768) {
+    // Adjusted function to trigger animation much earlier
+    function isElementInViewport(el, offset = 300) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= -offset &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // On scroll, check if each relevant element is in view
+    $(window).on("scroll", function () {
+      $(".player").each(function () {
+        if (isElementInViewport(this, 300)) {
+          $(this).addClass("show"); // Add the show class when in view
+        }
+      });
+
+      // Animate .section-discografia title with higher offset
+      if (isElementInViewport($(".section-discografia")[0], 300)) {
+        $(".section-discografia").addClass("show");
+      }
+
+      // Animate #biografia title with higher offset
+      if (isElementInViewport($("#biografia .titulo")[0], 300)) {
+        $("#biografia .titulo").addClass("show");
+      }
+
+      // Animate #biografia image and text with higher offset
+      if (isElementInViewport($("#biografia #imagen-bio")[0], 300)) {
+        $("#biografia #imagen-bio").addClass("show");
+      }
+      if (isElementInViewport($("#biografia #texto-bio")[0], 300)) {
+        $("#biografia #texto-bio").addClass("show");
+      }
+    });
+
+    // Initial check in case elements are already in view
+    $(window).trigger("scroll");
+  }
+});
