@@ -1,5 +1,3 @@
-/* FIX */
-
 /* Full-page background gradient for seamless section transitions */
 body {
   font-family: "AR BONNIE", sans-serif;
@@ -16,12 +14,6 @@ body {
   background: none;
 }
 
-
-/* FIX */
-
-
-/* CSS ANAHENNA */
-
 /* Define AR Bonnie font */
 @font-face {
   font-family: "AR Bonnie";
@@ -34,15 +26,12 @@ body {
 }
 
 /* NavBar */
-
-/* Apply the AR Bonnie font to the navbar and links */
 .navbar,
 .navbar-nav .nav-link {
   font-family: "AR Bonnie", sans-serif;
   font-weight: normal;
 }
 
-/* General navbar styling */
 .navbar {
   display: flex;
   align-items: center;
@@ -55,26 +44,23 @@ body {
   color: #000000;
 }
 
-/* Increased font size by 4 points for all screen sizes */
 .navbar-nav .nav-link {
   color: #fff9f9;
-  font-size: 30px; /* Original was 20px, now 24px */
+  font-size: 30px;
   padding: 6px 12px;
 }
 
-/* Increased logo size by 4 points */
 .navbar-logo {
-  max-width: 180px; /* Original was 160px, now 180px */
-  max-height: 84px; /* Original was 80px, now 84px */
+  max-width: 180px;
+  max-height: 84px;
   height: auto;
   display: block;
   transition: max-width 0.3s ease;
 }
 
-/* Mini logo adjustments for smaller screens */
 .navbar-logo-mini {
   display: none;
-  max-width: 54px; /* Original was 50px, now 54px */
+  max-width: 54px;
   height: auto;
   transition: max-width 0.3s ease;
 }
@@ -87,26 +73,20 @@ body {
 
   .navbar-logo-mini {
     display: block;
-    max-height: 29px; /* Original was 25px, now 29px */
+    max-height: 29px;
   }
 
   .navbar {
     padding: 1px 8px;
   }
 
-  /* Increased font size for mobile screens */
   .navbar-nav .nav-link {
-    font-size: 20px; /* Original was 16px, now 20px */
+    font-size: 20px;
     padding: 4px 8px;
   }
 }
-/* //NavBar */
-
-
-
 
 /* Hero section */
-/* Estilos generales para el slider */
 @media (min-width: 992px) {
   nav {
     height: 8vh;
@@ -175,61 +155,56 @@ body {
 /* Control button styles */
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #333333; /* Dark gray background */
-  opacity: 1; /* Full opacity */
-  border-radius: 50%; /* Circular shape */
-  width: 50px; /* Standard width */
-  height: 50px; /* Standard height */
+  background-color: #333333;
+  opacity: 1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Vertical centering */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition on hover */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Add margin to move buttons inward */
 .carousel-control-prev {
-  margin-left: 15px; /* Adjusts distance from left edge */
+  margin-left: 15px;
 }
 
 .carousel-control-next {
-  margin-right: 15px; /* Adjusts distance from right edge */
+  margin-right: 15px;
 }
 
-/* Enlarges on hover */
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  transform: translateY(-50%) scale(1.2); /* Enlarged size */
-  background-color: #555555; /* Slightly lighter gray on hover */
+  transform: translateY(-50%) scale(1.2);
+  background-color: #555555;
 }
 
-/* Customize icon inside control buttons */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-image: none; /* Remove default image */
+  background-image: none;
   display: inline-block;
   width: 12px;
   height: 12px;
-  border: solid #ffffff; /* White arrow color */
+  border: solid #ffffff;
   border-width: 0 3px 3px 0;
-  transform: rotate(45deg); /* Base rotation for the arrow */
+  transform: rotate(45deg);
 }
 
-/* Rotate icons to face the correct direction */
 .carousel-control-prev-icon {
-  transform: rotate(135deg); /* Adjusted rotation for left arrow */
+  transform: rotate(135deg);
 }
 
 .carousel-control-next-icon {
-  transform: rotate(-45deg); /* Adjusted rotation for right arrow */
+  transform: rotate(-45deg);
 }
 
-/* Estilos responsivos usando media queries */
 @media (max-width: 768px) {
   .carousel-control-prev,
   .carousel-control-next {
-    width: 40px; /* Smaller size for mobile */
+    width: 40px;
     height: 40px;
   }
 }
@@ -237,27 +212,50 @@ body {
 @media (max-width: 480px) {
   .carousel-control-prev,
   .carousel-control-next {
-    width: 30px; /* Smaller size on smaller screens */
+    width: 30px;
     height: 30px;
   }
 }
 
+/* Animation styling, limited to desktop screens */
+@media (min-width: 768px) {
+  /* Initial state for title before animation */
+  .section-discografia {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 
+  /* Animated state */
+  .section-discografia.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-/* Initial state for title before animation */
-.section-discografia {
-  opacity: 0;
-  transform: translateY(20px); /* Slightly lower than final position */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+  /* Initial state before animation for player cards */
+  .player {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Animated state for player cards */
+  .player.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Animated state */
-.section-discografia.show {
-  opacity: 1;
-  transform: translateY(0); /* Slides up to its final position */
+/* Hide animation for mobile screens */
+@media (max-width: 768px) {
+  .section-discografia,
+  .player {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-
+/* Padding adjustments */
 #biografia,
 #discografia,
 #contacto-rider,
@@ -265,7 +263,7 @@ body {
   padding-top: 3.5rem;
 }
 
-/* Tamaño para todos los títulos */
+/* Set title font size */
 h2 {
   font-size: 4rem;
 }
@@ -273,7 +271,6 @@ h2 {
 /* Biography */
 #biografia,
 #contacto-rider {
-  /* background: linear-gradient(to bottom, #dcd8d6, #8a8280); */
   padding-bottom: 2rem;
   max-height: 100%;
   margin: 60px;
@@ -289,8 +286,6 @@ h2 {
 
 #imagen-bio {
   box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.3);
-  /* height: 90vh;
-  width: auto; */
   display: block;
   margin: auto;
   width: 70%;
@@ -299,7 +294,6 @@ h2 {
 #texto-bio p {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
-  font-style: normal;
   font-size: 1.1rem;
   text-align: justify;
 }
@@ -315,13 +309,8 @@ h2 {
     margin-top: 3rem;
   }
 }
-/* //Biography */
 
-/* Discografía */
-/* #discografia {
-  background: linear-gradient(to top, #dcd8d6, #8a8280);
-  padding-bottom: 1rem;
-} */
+/* Discography */
 .section-discografia {
   font-family: "AR Bonnie", sans-serif;
   font-weight: normal;
@@ -347,7 +336,6 @@ h2 {
   }
 }
 
-/* Player layout - Keep the current size */
 .player {
   background-color: #141311;
   padding: 15px;
@@ -355,10 +343,9 @@ h2 {
   text-align: center;
   width: 200px;
   margin: 0 auto;
-  position: relative; /* Required for positioning icons */
+  position: relative;
 }
 
-/* Keep the image size unchanged */
 .player img {
   width: 170px;
   height: 170px;
@@ -367,10 +354,9 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Info section - Keep the current size */
 .info {
   color: #e1e1e6;
-  margin-bottom: 10px; /* Extra space to accommodate the action buttons */
+  margin-bottom: 10px;
   text-align: left;
 }
 
@@ -379,66 +365,61 @@ h2 {
   line-height: 1.2;
   margin-bottom: 5px;
   margin-top: 2px;
-  text-align: center; /* Centered text inside the player card */
+  text-align: center;
 }
 
-/* Action buttons container */
 .action-buttons {
   display: flex;
-  justify-content: space-between; /* Spread buttons left and right */
+  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   position: center;
   bottom: 5px;
   width: 100%;
-  padding: 0 20px; /* Ensure buttons stay inside the card */
+  padding: 0 20px;
 }
 
-/* Spotify button (left) */
 .spotify-button {
-  color: #8a8280; /* Same default color as the play button */
+  color: #8a8280;
   font-size: 18px;
   cursor: pointer;
 }
 
 .spotify-button:hover {
-  color: #1ed760; /* Spotify green on hover */
+  color: #1ed760;
 }
 
-/* Play button (centered) */
 .play-button {
   color: #8a8280;
   font-size: 24px;
   cursor: pointer;
-  margin: 0 auto; /* Ensures centering by default */
+  margin: 0 auto;
 }
 
 .play-button:hover {
   color: #ffffff;
 }
 
-/* YouTube button (right) */
 .youtube-button {
-  color: #8a8280; /* Same default color as the play button */
+  color: #8a8280;
   font-size: 18px;
   cursor: pointer;
 }
 
 .youtube-button:hover {
-  color: #ff4d4d; /* YouTube red on hover */
+  color: #ff4d4d;
 }
 
-/* Track progress bar */
 .track-time {
   padding-top: 8px;
-  margin-top: 15px; /* Space between buttons and progress bar */
-  width: 100%; /* Ensure it spans the full width */
+  margin-top: 15px;
+  width: 100%;
 }
 
 .track {
   position: relative;
-  height: 5px; /* Height of the progress bar */
-  background: #d9d9d9; /* Background color of the progress bar (light gray) */
+  height: 5px;
+  background: #d9d9d9;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -448,24 +429,22 @@ h2 {
   top: 0;
   left: 0;
   height: 100%;
-  background: #5e5958; /* Filled part of the progress bar (Spotify green) */
-  width: 0; /* Default width is 0 */
+  background: #5e5958;
+  width: 0;
   border-radius: 10px;
 }
 
-/* Optional: adjust the size of the track on smaller screens */
 @media (max-width: 768px) {
   .track {
-    height: 4px; /* Smaller track bar on smaller screens */
+    height: 4px;
   }
 }
 
-/* Smaller buttons on smaller screens */
 @media (max-width: 768px) {
   .spotify-button,
   .youtube-button,
   .play-button {
-    font-size: 12px; /* Adjust button size for smaller screens */
+    font-size: 12px;
   }
 }
 
@@ -473,30 +452,11 @@ h2 {
   .spotify-button,
   .youtube-button,
   .play-button {
-    font-size: 10px; /* Further reduce button size for mobile */
+    font-size: 10px;
   }
 }
 
-/* Initial state before animation */
-.player {
-  opacity: 0;
-  transform: translateY(20px); /* Slightly lower than the final position */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
-
-/* Animated state */
-.player.show {
-  opacity: 1;
-  transform: translateY(0); /* Slides up to its final position */
-}
-
-
-/* //Discografía */
-
-/* Contacto-Ryder */
-/* #contacto-rider h2 {
-  font-size: 4rem;
-} */
+/* Contact Form Styling */
 #contacto-rider .row {
   margin: auto 0;
 }
@@ -507,7 +467,6 @@ h2 {
 }
 .card-form {
   text-align: left;
-  /* background-color: #423d3a; */
   background-image: url("../img/grunge.png");
   background-size: cover;
   color: #dcd8d6;
@@ -518,7 +477,6 @@ h2 {
   width: 100%;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 300;
-  font-style: normal;
 }
 .card-form h6 {
   text-align: center;
@@ -555,7 +513,6 @@ textarea {
 .input-text:focus,
 textarea:focus {
   background-color: rgba(0, 0, 0, 0.8);
-  /* backdrop-filter: blur(10px); */
 }
 
 .submit-container {
@@ -583,9 +540,6 @@ textarea:focus {
   font-family: "AR BONNIE", sans-serif;
   font-size: 2rem;
 }
-/* #rider a {
-  vertical-align: middle;
-} */
 #rider-img {
   margin-top: 1rem;
   width: 60%;
@@ -642,12 +596,10 @@ textarea:focus {
   font-size: 1.2rem;
 }
 #form-response button {
-  /* background-color: #dcd8d6; */
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.1rem;
   border-radius: 3px;
   font-weight: 500;
-  /* border: none; */
 }
 
 @keyframes throb {
@@ -660,18 +612,12 @@ textarea:focus {
   66% {
     transform: scale(0.8);
   }
-
   100% {
     transform: scale(1);
   }
 }
-/* //Contacto-Ryder */
 
 /* REDES SOCIALES */
-/* #rrss {
-  background: linear-gradient(to top, #dcd8d6, #8a8280);
-} */
-
 #rrss-icon-container {
   padding: 10.5rem 2rem;
   display: flex;
@@ -681,12 +627,6 @@ textarea:focus {
 }
 #rrss-icon-container a {
   width: 5rem;
-}
-@media (max-width: 770px) {
-  #rrss-icon-container a {
-    flex: 1 1 20%;
-    margin-top: 4rem;
-  }
 }
 @media (max-width: 770px) {
   #rrss-icon-container a {
@@ -716,7 +656,6 @@ iframe {
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* //REDES SOCIALES */
 
 /* FOOTER */
 footer {
@@ -729,8 +668,6 @@ footer {
 #footer-line {
   margin: 1rem 25%;
 }
-
-/* //FOOTER */
 
 /* Botón inicio */
 #back-top {
@@ -756,13 +693,11 @@ footer {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 3rem;
 }
-/* //Botón inicio */
 
 /* modal devs */
 #modal-gatitos {
   height: 100vh;
   width: 100vw;
-  /* justify-content: center; */
   font-family: "Barlow Condensed", sans-serif;
   align-content: center;
   background-color: rgba(255, 255, 255, 0.2);
@@ -820,4 +755,3 @@ footer {
   padding-left: 0.2rem;
   color: #dcd8d6;
 }
-/* //modal devs */
