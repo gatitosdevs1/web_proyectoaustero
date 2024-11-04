@@ -32,11 +32,11 @@ $mail = new PHPMailer(true);
 try {
     // Configuración del servidor SMTP
     $mail->isSMTP();
-    $mail->Host = 'smtp.hostinger.com'; // Cambia esto si usas otro proveedor SMTP
+    $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = true;
-    $mail->Username = $_ENV['SMTP_USERNAME'];; // Tu correo electrónico
-    $mail->Password = $_ENV['SMTP_PASSWORD']; // Contraseña de aplicación generada en Google
-    $mail->SMTPSecure = 'tls'; // Usa TLS o SSL según tu configuración
+    $mail->Username = $_ENV['SMTP_USERNAME'];
+    $mail->Password = $_ENV['SMTP_PASSWORD'];
+    $mail->SMTPSecure = 'tls'; 
     $mail->Port = 587; // Puerto para TLS (465 para SSL)
 
     // Configuración del correo
@@ -52,11 +52,9 @@ try {
 
     // Enviar el correo
     $mail->send();
-    // echo '¡Correo enviado con éxito!';
     http_response_code(200);
     echo json_encode(['message' => '¡Mensaje enviado!']);
 } catch (Exception $e) {
-    // echo "Hubo un problema al enviar el correo: {$mail->ErrorInfo}";
     http_response_code(500);
     echo json_encode(['error' => "Hubo un problema al enviar el correo: {$mail->ErrorInfo}"]);
 

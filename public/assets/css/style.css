@@ -1,18 +1,22 @@
 /* Full-page background gradient for seamless section transitions */
 body {
   font-family: "AR BONNIE", sans-serif;
-  background: linear-gradient(to bottom, #dcd8d6, #8a8280); /* Gradient colors to match existing style */
+  background: linear-gradient(
+    to bottom,
+    #dcd8d6,
+    #8a8280
+  ); /* Gradient colors to match existing style */
   background-attachment: fixed; /* Keeps the gradient static during scrolling */
   color: #000; /* Ensures text is readable on gradient */
 }
 
 /* Remove individual section backgrounds for continuity */
-#biografia,
+/* #biografia,
 #discografia,
 #contacto-rider,
 #rrss {
   background: none;
-}
+} */
 
 /* Define AR Bonnie font */
 @font-face {
@@ -247,7 +251,7 @@ body {
 }
 
 /* Hide animation for mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 785px) {
   .section-discografia,
   .player {
     opacity: 1;
@@ -290,7 +294,7 @@ body {
 }
 
 /* Desktop-only animations */
-@media (max-width: 768px) {
+@media (max-width: 785px) {
   #biografia .titulo,
   #biografia #imagen-bio,
   #biografia #texto-bio {
@@ -701,9 +705,7 @@ textarea:focus {
   }
 }
 
-
 /* REDES SOCIALES */
-
 
 .card {
   padding: 15px;

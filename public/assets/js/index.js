@@ -2,22 +2,24 @@ $(document).ready(function () {
   fetchTopTracks();
 });
 
-$.ajax({
-  url: "../get_tracks.php",
-  method: "GET",
-  dataType: "json",
-  success: function (response) {
-    console.log("AJAX Success Response:", response);
-    if (response.tracks) {
-      displayTopTracks(response.tracks);
-    } else {
-      console.error("No tracks found in the response");
-    }
-  },
-  error: function (err) {
-    console.log("AJAX request failed:", err);
-  },
-});
+function fetchTopTracks() {
+  $.ajax({
+    url: "../get_tracks.php",
+    method: "GET",
+    dataType: "json",
+    success: function (response) {
+      // console.log("AJAX Success Response:", response);
+      if (response.tracks) {
+        displayTopTracks(response.tracks);
+      } else {
+        console.error("No tracks found in the response");
+      }
+    },
+    error: function (err) {
+      console.log("AJAX request failed:", err);
+    },
+  });
+}
 
 function displayTopTracks(tracks) {
   tracks.forEach((track, index) => {
@@ -198,7 +200,6 @@ contactForm.addEventListener("submit", function (e) {
         formResponse("Hubo un error", "Por favor inténtelo más tarde", loader);
         console.log("ma");
         console.log(response);
-        // alert("Hubo un error!");
       } else {
         return response.json();
       }
@@ -211,8 +212,6 @@ contactForm.addEventListener("submit", function (e) {
           loader
         );
         contactForm.reset();
-
-        // alert(data.message);
       }
     })
     .catch((error) => {
@@ -247,20 +246,13 @@ const btnDev = document.getElementById("btn-dev");
 const modalDev = document.getElementById("modal-gatitos");
 const btnClose = document.getElementById("closeM");
 btnDev.addEventListener("click", function () {
-  // modalDev.classList.remove("d-none");
-
-  // modalDev.classList.remove("fade");
   modalDev.style.zIndex = "100";
   modalDev.classList.add("show");
 });
 btnClose.addEventListener("click", function () {
-  // modalDev.classList.remove("d-none");
-
-  // modalDev.classList.remove("fade");
   modalDev.classList.remove("show");
   modalDev.style.zIndex = "-1";
 });
-
 
 // Check if element is in the viewport
 function isElementInViewport(el) {
@@ -268,19 +260,8 @@ function isElementInViewport(el) {
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-
-// Check if element is in the viewport (reuse this function)
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
@@ -306,7 +287,6 @@ $(document).ready(function () {
     $(window).trigger("scroll");
   }
 });
-
 
 // Trigger the animation on scroll
 $(document).ready(function () {
@@ -335,8 +315,11 @@ $(document).ready(function () {
       return (
         rect.top >= -offset &&
         rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) +
+            offset &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
       );
     }
 
