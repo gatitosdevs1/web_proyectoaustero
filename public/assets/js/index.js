@@ -4,7 +4,8 @@ $(document).ready(function () {
 
 function fetchTopTracks() {
   $.ajax({
-    url: "../get_tracks.php",
+    url: "http://localhost/PruebaPHPmailer/get_tracks.php",
+    // url: "../get_tracks.php",
     method: "GET",
     dataType: "json",
     success: function (response) {

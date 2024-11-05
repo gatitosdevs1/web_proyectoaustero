@@ -159,7 +159,7 @@ body {
 /* Control button styles */
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: #333333;
+  /* background-color: #333333; */
   opacity: 1;
   border-radius: 50%;
   width: 50px;
