@@ -1,24 +1,14 @@
-/* Full-page background gradient for seamless section transitions */
+/* ---------- General ----------  */
 body {
   font-family: "AR BONNIE", sans-serif;
   background: linear-gradient(
     to bottom,
     #dcd8d6,
     #8a8280
-  ); /* Gradient colors to match existing style */
-  background-attachment: fixed; /* Keeps the gradient static during scrolling */
-  color: #000; /* Ensures text is readable on gradient */
+  ); 
+  background-attachment: fixed; 
+  color: #000; 
 }
-
-/* Remove individual section backgrounds for continuity */
-/* #biografia,
-#discografia,
-#contacto-rider,
-#rrss {
-  background: none;
-} */
-
-/* Define AR Bonnie font */
 @font-face {
   font-family: "AR Bonnie";
   src: url("../fonts/AR_Bonnie.ttf") format("truetype");
@@ -28,8 +18,31 @@ body {
 body {
   font-family: "AR BONNIE", sans-serif;
 }
+/* tamaño fuente secciones */
+h2 {
+  font-size: 4rem;
+}
+/* padding secciones */
+#biografia,
+#discografia,
+#contacto-rider,
+#rrss {
+  padding-top: 3.5rem;
+}
+/* consultar paulo */
+#biografia,
+#contacto-rider {
+  padding-bottom: 2rem;
+  max-height: 100%;
+  margin: 60px;
+}
 
-/* NavBar */
+/*  ---------- General ----------  */
+
+
+
+
+/*  ---------- Navbar ----------  */
 .navbar,
 .navbar-nav .nav-link {
   font-family: "AR Bonnie", sans-serif;
@@ -69,7 +82,6 @@ body {
   transition: max-width 0.3s ease;
 }
 
-/* Adjust font size and logo size for mobile screens */
 @media (max-width: 768px) {
   .navbar-logo {
     display: none;
@@ -89,8 +101,12 @@ body {
     padding: 4px 8px;
   }
 }
+/*  ---------- Navbar ----------  */
 
-/* Hero section */
+
+
+
+/*  ---------- Carousel/Slider ----------  */
 @media (min-width: 992px) {
   nav {
     height: 8vh;
@@ -156,10 +172,8 @@ body {
   height: 100%;
 }
 
-/* Control button styles */
 .carousel-control-prev,
 .carousel-control-next {
-  /* background-color: #333333; */
   opacity: 1;
   border-radius: 50%;
   width: 50px;
@@ -220,110 +234,12 @@ body {
     height: 30px;
   }
 }
+/*  ---------- Carousel/Slider ----------  */
 
-/* Animation styling, limited to desktop screens */
-@media (min-width: 768px) {
-  /* Initial state for title before animation */
-  .section-discografia {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
 
-  /* Animated state */
-  .section-discografia.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
-  /* Initial state before animation for player cards */
-  .player {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
 
-  /* Animated state for player cards */
-  .player.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hide animation for mobile screens */
-@media (max-width: 785px) {
-  .section-discografia,
-  .player {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Initial state for the biografia title (same as discografia title) */
-#biografia .titulo {
-  opacity: 0;
-  transform: translateY(20px); /* Slightly lower than the final position */
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Animated state for the biografia title */
-#biografia .titulo.show {
-  opacity: 1;
-  transform: translateY(0); /* Slides up to its final position */
-}
-
-/* Initial state for bio image (left to center) */
-#biografia #imagen-bio {
-  opacity: 0;
-  transform: translateX(-50px); /* Start from the left */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Initial state for bio text (right to center) */
-#biografia #texto-bio {
-  opacity: 0;
-  transform: translateX(50px); /* Start from the right */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Animated state for bio image and text when they move to the center */
-#biografia #imagen-bio.show,
-#biografia #texto-bio.show {
-  opacity: 1;
-  transform: translateX(0); /* Move to center */
-}
-
-/* Desktop-only animations */
-@media (max-width: 785px) {
-  #biografia .titulo,
-  #biografia #imagen-bio,
-  #biografia #texto-bio {
-    opacity: 1;
-    transform: none; /* No animations on mobile */
-  }
-}
-
-/* Padding adjustments */
-#biografia,
-#discografia,
-#contacto-rider,
-#rrss {
-  padding-top: 3.5rem;
-}
-
-/* Set title font size */
-h2 {
-  font-size: 4rem;
-}
-
-/* Biography */
-#biografia,
-#contacto-rider {
-  padding-bottom: 2rem;
-  max-height: 100%;
-  margin: 60px;
-}
-
+/*  ---------- Biografia ----------  */
 #biografia .row {
   align-items: center;
 }
@@ -357,8 +273,12 @@ h2 {
     margin-top: 3rem;
   }
 }
+/*  ---------- Biografia ----------  */
 
-/* Discography */
+
+
+
+/*  ---------- Discografia ----------  */
 .section-discografia {
   font-family: "AR Bonnie", sans-serif;
   font-weight: normal;
@@ -503,8 +423,12 @@ h2 {
     font-size: 10px;
   }
 }
+/*  ---------- Discografia ----------  */
 
-/* Contact Form Styling */
+
+
+
+/*  ---------- Formulario de contacto ----------  */
 #contacto-rider .row {
   margin: auto 0;
 }
@@ -535,7 +459,6 @@ h2 {
   padding-top: 5%;
   font-size: 1.2rem;
 }
-
 .card-form input {
   height: 2.5rem;
 }
@@ -581,19 +504,6 @@ textarea:focus {
   color: #000000;
   background-color: #dcd8d6;
 }
-#rider {
-  text-align: center;
-}
-#rider h5 {
-  font-family: "AR BONNIE", sans-serif;
-  font-size: 2rem;
-}
-#rider-img {
-  margin-top: 1rem;
-  width: 60%;
-  height: auto;
-}
-
 #form-loader {
   height: 100vh;
   width: 100vw;
@@ -649,7 +559,6 @@ textarea:focus {
   border-radius: 3px;
   font-weight: 500;
 }
-
 @keyframes throb {
   0% {
     transform: scale(1);
@@ -664,10 +573,59 @@ textarea:focus {
     transform: scale(1);
   }
 }
+/*  ---------- Formulario de contacto ----------  */
 
-/* REDES SOCIALES */
 
-/* Redes Sociales - Social Media Icons */
+
+
+/*  ---------- Rider ----------  */
+#rider {
+  text-align: center;
+}
+#rider h5 {
+  font-family: "AR BONNIE", sans-serif;
+  font-size: 2rem;
+}
+#rider-img {
+  margin-top: 1rem;
+  width: 60%;
+  height: auto;
+}
+/*  ---------- Rides ----------  */
+
+
+
+
+/*  ---------- Redes Sociales ----------  */
+.card {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.redes .text-center a {
+  margin: 0 15px;
+}
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+/*  ---------- Redes Sociales ----------  */
+
+
+
+
+/*  ---------- Iconos Redes Sociales ----------  */
+.rrss-icon {
+  font-size: 5rem;
+  color: transparent; /* No color fill */
+  -webkit-text-stroke-width: 3px; /* Stroke width */
+  -webkit-text-stroke-color: #000000; /* Stroke color */
+  transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
 #rrss-icon-container {
   padding: 10.5rem 2rem;
   display: flex;
@@ -686,44 +644,12 @@ textarea:focus {
     margin-top: 4rem;
   }
 }
+/*  ---------- Iconos Redes Sociales ----------  */
 
-/* Base styling for the icons */
-.rrss-icon {
-  font-size: 5rem;
-  color: transparent; /* No color fill */
-  -webkit-text-stroke-width: 3px; /* Stroke width */
-  -webkit-text-stroke-color: #000000; /* Stroke color */
-  transition: transform 0.3s ease; /* Smooth scaling transition */
-}
 
-/* Hover effect - Desktop only */
-@media (min-width: 768px) {
-  .rrss-icon:hover {
-    transform: scale(1.2); /* Enlarge icon slightly on hover */
-    color: transparent; /* Keep color transparent */
-    -webkit-text-stroke-color: #000000; /* Keep stroke color consistent */
-  }
-}
 
-/* REDES SOCIALES */
 
-.card {
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
-}
-
-.redes .text-center a {
-  margin: 0 15px;
-}
-
-iframe {
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* FOOTER */
+/*  ---------- Footer ----------  */
 footer {
   background-color: #8a8280;
   font-family: "Arial", sans-serif;
@@ -734,8 +660,12 @@ footer {
 #footer-line {
   margin: 1rem 25%;
 }
+/*  ---------- Footer ----------  */
 
-/* Botón inicio */
+
+
+
+/*  ---------- Botón inicio ----------  */
 #back-top {
   height: 3rem;
   width: 3rem;
@@ -759,8 +689,12 @@ footer {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 3rem;
 }
+/*  ---------- Botón inicio ----------  */
 
-/* modal devs */
+
+
+
+/*  ---------- Modal colaboradores ----------  */
 #modal-gatitos {
   height: 100vh;
   width: 100vw;
@@ -821,3 +755,126 @@ footer {
   padding-left: 0.2rem;
   color: #dcd8d6;
 }
+/*  ---------- Modal colaboradores ----------  */
+
+
+
+
+/*  ---------- ANIMACIIONES ----------  */
+
+/* ---------------------------------------------------------------------HOVER ICONOS REDES SOCIALES(solo-desktop) */
+@media (min-width: 768px) {
+  .rrss-icon:hover {
+    transform: scale(1.2); /* Enlarge icon slightly on hover */
+    color: transparent; /* Keep color transparent */
+    -webkit-text-stroke-color: #000000; /* Keep stroke color consistent */
+  }
+}
+/* ---------------------------------------------------------------------HOVER ICONOS REDES SOCIALES(solo-desktop) */
+
+
+/* ---------------------------------------------------------------------ANIMACION BIOGRAFIA titulo-img-txt */
+/* Initial state for the biografia title (same as discografia title) */
+#biografia .titulo {
+  opacity: 0;
+  transform: translateY(20px); /* Slightly lower than the final position */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animated state for the biografia title */
+#biografia .titulo.show {
+  opacity: 1;
+  transform: translateY(0); /* Slides up to its final position */
+}
+
+/* Initial state for bio image (left to center) */
+#biografia #imagen-bio {
+  opacity: 0;
+  transform: translateX(-50px); /* Start from the left */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Initial state for bio text (right to center) */
+#biografia #texto-bio {
+  opacity: 0;
+  transform: translateX(50px); /* Start from the right */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animated state for bio image and text when they move to the center */
+#biografia #imagen-bio.show,
+#biografia #texto-bio.show {
+  opacity: 1;
+  transform: translateX(0); /* Move to center */
+}
+
+/* Desktop-only animations */
+@media (max-width: 785px) {
+  #biografia .titulo,
+  #biografia #imagen-bio,
+  #biografia #texto-bio {
+    opacity: 1;
+    transform: none; /* No animations on mobile */
+  }
+}
+/* ANIMACION BIOGRAFIA titulo-img-txt */
+
+/* ---------------------------------------------------------------------ANIMACION BIOGRAFIA titulo-img-txt */
+
+
+
+
+/* por ordenar */
+
+/* Animation styling, limited to desktop screens */
+@media (min-width: 768px) {
+  /* Initial state for title before animation */
+  .section-discografia {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Animated state */
+  .section-discografia.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Initial state before animation for player cards */
+  .player {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* Animated state for player cards */
+  .player.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide animation for mobile screens */
+@media (max-width: 785px) {
+  .section-discografia,
+  .player {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+/* falta por ordenar otros */
+
+
+
+
+
+/* Biography */
+
+
