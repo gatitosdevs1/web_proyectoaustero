@@ -1,373 +1,140 @@
-// $(document).ready(function () {
-//   fetchTopTracks();
-// });
-
+// Fetch and display top tracks on page load
 $.ajax({
   url: "../get_tracks.php",
   method: "GET",
   dataType: "json",
-  success: function (response) {
+  success: (response) => {
     console.log("AJAX Success Response:", response);
-    if (response.tracks) {
-      displayTopTracks(response.tracks);
-    } else {
-      console.error("No tracks found in the response");
-    }
+    response.tracks ? displayTopTracks(response.tracks) : console.error("No tracks found in the response");
   },
-  error: function (err) {
-    console.log("AJAX request failed:", err);
-  },
+  error: (err) => console.log("AJAX request failed:", err),
 });
 
 function displayTopTracks(tracks) {
-  tracks.forEach((track, index) => {
-    if (index < 8) {
-      // Limiting to 8 tracks
-      const trackName = track.name;
-      const albumImage = track.album.images[0].url; // Use the first image
-      const previewUrl = track.preview_url;
-      const spotifyUrl = track.external_urls.spotify;
-      const youtubeUrl = "https://www.youtube.com/@proyectoaustero"; // Band's YouTube link
-
-      const card = `
+  tracks.slice(0, 8).forEach((track, index) => {
+    const { name, album, preview_url, external_urls } = track;
+    const card = `
       <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="player" style="position: relative;">
-          <!-- Album Image -->
-          <img src="${albumImage}" alt="${trackName}" class="album-image" />
-          <!-- Song Information -->
-          <div class="info">
-            <h1>${trackName}</h1>
-          </div>
-          <!-- Track Time Progress Bar -->
-          <div class="track-time">
-            <div class="track">
-              <div class="progress-fill" id="progress-bar-${index}"></div>
-            </div>
-          </div>
-          <!-- Action buttons (Spotify, Play, YouTube) -->
+          <img src="${album.images[0].url}" alt="${name}" class="album-image" />
+          <div class="info"><h1>${name}</h1></div>
+          <div class="track-time"><div class="track"><div class="progress-fill" id="progress-bar-${index}"></div></div></div>
           <div class="action-buttons">
-            <a href="${spotifyUrl}" target="_blank" class="spotify-button">
-              <i class="fab fa-spotify"></i>
-            </a>
-            <div class="play-button" id="play-pause-button-${index}" onclick="playPreview('${previewUrl}', ${index})">
-              <i class="fa-solid fa-play"></i>
-            </div>
-            <a href="${youtubeUrl}" target="_blank" class="youtube-button">
-              <i class="fab fa-youtube"></i>
-            </a>
+            <a href="${external_urls.spotify}" target="_blank" class="spotify-button"><i class="fab fa-spotify"></i></a>
+            <div class="play-button" id="play-pause-button-${index}" onclick="playPreview('${preview_url}', ${index})"><i class="fa-solid fa-play"></i></div>
+            <a href="https://www.youtube.com/@proyectoaustero" target="_blank" class="youtube-button"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-      </div>
-    `;
-
-      $("#track-cards-container").append(card);
-    }
+      </div>`;
+    $("#track-cards-container").append(card);
   });
 }
 
-let currentAudio = null;
-let progressInterval = null;
-let isPlaying = false;
-let currentTrackIndex = null;
+// Track playback controls
+let currentAudio = null, progressInterval = null, isPlaying = false, currentTrackIndex = null;
 
 function playPreview(previewUrl, index) {
-  const playButton = document.getElementById(`play-pause-button-${index}`);
-  const progressBar = document.getElementById(`progress-bar-${index}`);
+  const playButton = $(`#play-pause-button-${index}`);
+  const progressBar = $(`#progress-bar-${index}`);
 
-  // If this track is already playing, pause it
-  if (currentTrackIndex === index && currentAudio && isPlaying) {
-    currentAudio.pause(); // Pause the track
-    isPlaying = false;
-    playButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Change to play icon
-    clearInterval(progressInterval); // Stop progress bar update
-    return;
+  if (currentTrackIndex === index && currentAudio) {
+    isPlaying ? pauseAudio(playButton) : resumeAudio(playButton, progressBar);
+  } else {
+    if (currentAudio) resetPreviousAudio();
+    startNewAudio(previewUrl, index, playButton, progressBar);
   }
+}
 
-  // If this track is paused, resume it
-  if (currentTrackIndex === index && currentAudio && !isPlaying) {
-    currentAudio.play(); // Resume the track
-    isPlaying = true;
-    playButton.innerHTML = '<i class="fa-solid fa-pause"></i>'; // Change to pause icon
-    startProgressBar(progressBar); // Resume progress bar
-    return;
-  }
+function pauseAudio(playButton) {
+  currentAudio.pause();
+  isPlaying = false;
+  playButton.html('<i class="fa-solid fa-play"></i>');
+  clearInterval(progressInterval);
+}
 
-  // If switching to a new track, reset the previous one
-  if (currentAudio) {
-    currentAudio.pause(); // Pause the current audio
-    clearInterval(progressInterval); // Clear the previous progress interval
-    const previousButton = document.getElementById(
-      `play-pause-button-${currentTrackIndex}`
-    );
-    const previousProgressBar = document.getElementById(
-      `progress-bar-${currentTrackIndex}`
-    );
-    if (previousButton)
-      previousButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset previous button icon
-    if (previousProgressBar) previousProgressBar.style.width = "0%"; // Reset previous progress bar
-  }
+function resumeAudio(playButton, progressBar) {
+  currentAudio.play();
+  isPlaying = true;
+  playButton.html('<i class="fa-solid fa-pause"></i>');
+  startProgressBar(progressBar);
+}
 
-  // Start playing a new track
+function resetPreviousAudio() {
+  currentAudio.pause();
+  clearInterval(progressInterval);
+  $(`#play-pause-button-${currentTrackIndex}`).html('<i class="fa-solid fa-play"></i>');
+  $(`#progress-bar-${currentTrackIndex}`).css("width", "0%");
+}
+
+function startNewAudio(previewUrl, index, playButton, progressBar) {
   currentAudio = new Audio(previewUrl);
   currentAudio.play();
   isPlaying = true;
-  currentTrackIndex = index; // Update current track index
-
-  playButton.innerHTML = '<i class="fa-solid fa-pause"></i>'; // Change to pause icon
-
-  startProgressBar(progressBar); // Start the progress bar
-
-  // Automatically stop the audio after 20 seconds
-  const duration = 20; // Define the duration as 20 seconds
-  currentAudio.currentTime = 0; // Ensure it starts from the beginning
-  const stopPlayback = setTimeout(() => {
-    if (currentAudio) {
-      currentAudio.pause(); // Stop the audio after 20 seconds
-      currentAudio.currentTime = 0; // Reset the track to the beginning
-      clearInterval(progressInterval); // Stop the progress bar updates
-      progressBar.style.width = "0%"; // Reset progress bar after song ends
-      playButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset to play icon
-      isPlaying = false; // Set playing status to false
-    }
-  }, duration * 1000); // Stop the audio after 20 seconds (20 * 1000ms)
-
-  currentAudio.addEventListener("ended", () => {
-    clearTimeout(stopPlayback); // Clear timeout in case the song ends earlier
-    clearInterval(progressInterval); // Stop progress bar updates
-    progressBar.style.width = "0%"; // Reset progress bar
-    playButton.innerHTML = '<i class="fa-solid fa-play"></i>'; // Reset play icon
-    isPlaying = false;
-  });
+  currentTrackIndex = index;
+  playButton.html('<i class="fa-solid fa-pause"></i>');
+  startProgressBar(progressBar);
+  currentAudio.addEventListener("ended", resetTrack);
 }
 
-// Function to handle progress bar updates
+function resetTrack() {
+  clearInterval(progressInterval);
+  isPlaying = false;
+  currentAudio = null;
+  $(`#progress-bar-${currentTrackIndex}`).css("width", "0%");
+  $(`#play-pause-button-${currentTrackIndex}`).html('<i class="fa-solid fa-play"></i>');
+}
+
 function startProgressBar(progressBar) {
-  const duration = 20; // Preview duration is 20 seconds
-  const step = 100 / (duration * 10); // Calculate the percentage step per 100ms
-  let progress = (currentAudio.currentTime / duration) * 100; // Calculate initial progress
-
+  const duration = 20;
   progressInterval = setInterval(() => {
-    if (isPlaying) {
-      progress = (currentAudio.currentTime / duration) * 100;
-      if (progress <= 100) {
-        progressBar.style.width = `${progress}%`;
-      } else {
-        clearInterval(progressInterval); // Stop when 100% is reached
-      }
-    }
-  }, 100); // Update progress every 100ms
+    const progress = (currentAudio.currentTime / duration) * 100;
+    if (progress <= 100) progressBar.css("width", `${progress}%`);
+    else clearInterval(progressInterval);
+  }, 100);
 }
 
-// Contact-form
-
-//Para mostrar el mensaje en el modal
-function formResponse(head, body, loader) {
-  const messageHead = document.querySelector("#form-response h6");
-  const messageBody = document.querySelector("#form-response p");
-  const resMessage = document.getElementById("form-response");
-  loader.classList.add("d-none");
-  resMessage.classList.remove("d-none");
-  messageHead.innerHTML = head;
-  messageBody.innerHTML = body;
-}
-//salir del modal
-const resButton = document.querySelector("#form-response button");
-resButton.addEventListener("click", () => {
-  const resView = document.getElementById("form-loader");
-  resView.classList.add("d-none");
+// Back to Top Button
+const biography = $("#discografia"), arrow = $("#back-top");
+$(window).on("scroll", () => {
+  biography.offset().top - 100 <= $(window).scrollTop()
+    ? arrow.removeClass("fade").addClass("show")
+    : arrow.removeClass("show").addClass("fade");
 });
 
-//Enviar el mensaje
-const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+arrow.on("click", () => $("html, body").animate({ scrollTop: 0 }, "smooth"));
 
-  const resView = document.getElementById("form-loader");
-  const loader = document.getElementById("img-form-loader");
-  resView.classList.remove("d-none");
-  loader.classList.remove("d-none");
+// Modal Toggle
+const modalDev = $("#modal-gatitos");
+$("#btn-dev").on("click", () => modalDev.css("zIndex", "100").addClass("show"));
+$("#closeM").on("click", () => modalDev.removeClass("show").css("zIndex", "-1"));
 
-  const formData = new FormData(contactForm);
-  //cambiar ruta para deploy
-  fetch("https://proyectoaustero.com/send_mail.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (!response.ok) {
-        formResponse("Hubo un error", "Por favor inténtelo más tarde", loader);
-        console.log("ma");
-        console.log(response);
-        // alert("Hubo un error!");
-      } else {
-        return response.json();
-      }
-    })
-    .then((data) => {
-      if (data.message) {
-        formResponse(
-          data.message,
-          "Nos contactaremos contigo lo antes posible.",
-          loader
-        );
-        contactForm.reset();
+// Scroll animations for specific elements
+function handleScrollAnimations() {
+  const elementsToAnimate = [
+    { selector: ".player", offset: 300 },
+    { selector: ".section-discografia", offset: 300 },
+    { selector: "#biografia .titulo", offset: 300 },
+    { selector: "#biografia #imagen-bio", offset: 300 },
+    { selector: "#biografia #texto-bio", offset: 300 }
+  ];
 
-        // alert(data.message);
-      }
-    })
-    .catch((error) => {
-      formResponse("Hubo un error", "Por favor inténtelo más tarde", loader);
-      console.error("Error:", error);
+  $(window).on("scroll", () => {
+    elementsToAnimate.forEach(({ selector, offset }) => {
+      $(selector).each(function () {
+        if (isElementInViewport(this, offset)) $(this).addClass("show");
+      });
     });
-});
-// Contact-form end
+  }).trigger("scroll");
+}
 
-// Back top
-const biography = document.getElementById("discografia");
-const arrow = document.getElementById("back-top");
-window.addEventListener("scroll", function () {
-  if (biography.offsetTop - 100 <= this.scrollY) {
-    arrow.classList.remove("fade");
-    arrow.classList.add("show");
-  } else {
-    arrow.classList.remove("show");
-    arrow.classList.add("fade");
-  }
-});
-
-arrow.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
-
-//ModalDev
-const btnDev = document.getElementById("btn-dev");
-const modalDev = document.getElementById("modal-gatitos");
-const btnClose = document.getElementById("closeM");
-btnDev.addEventListener("click", function () {
-  // modalDev.classList.remove("d-none");
-
-  // modalDev.classList.remove("fade");
-  modalDev.style.zIndex = "100";
-  modalDev.classList.add("show");
-});
-btnClose.addEventListener("click", function () {
-  // modalDev.classList.remove("d-none");
-
-  // modalDev.classList.remove("fade");
-  modalDev.classList.remove("show");
-  modalDev.style.zIndex = "-1";
-});
-
-
-// Check if element is in the viewport
-function isElementInViewport(el) {
+function isElementInViewport(el, offset = 0) {
   const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  return rect.top >= -offset && rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth);
 }
 
-
-// Check if element is in the viewport (reuse this function)
-function isElementInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Trigger the animation on scroll
-$(document).ready(function () {
-  // Only apply on desktop (PC) screens
-  if ($(window).width() > 768) {
-    // On scroll, check if each .player and .section-discografia is in view
-    $(window).on("scroll", function () {
-      $(".player").each(function () {
-        if (isElementInViewport(this)) {
-          $(this).addClass("show"); // Add the show class when in view
-        }
-      });
-      // Check if .section-discografia is in view
-      if (isElementInViewport($(".section-discografia")[0])) {
-        $(".section-discografia").addClass("show");
-      }
-    });
-
-    // Initial check in case elements are already in view
-    $(window).trigger("scroll");
-  }
-});
-
-
-// Trigger the animation on scroll
-$(document).ready(function () {
-  // Only apply on desktop (PC) screens
-  if ($(window).width() > 768) {
-    // On scroll, check if each .player is in view
-    $(window).on("scroll", function () {
-      $(".player").each(function () {
-        if (isElementInViewport(this)) {
-          $(this).addClass("show"); // Add the show class when in view
-        }
-      });
-    });
-
-    // Initial check in case elements are already in view
-    $(window).trigger("scroll");
-  }
-});
-
-$(document).ready(function () {
-  // Only apply animations on desktop screens
-  if ($(window).width() > 768) {
-    // Adjusted function to trigger animation much earlier
-    function isElementInViewport(el, offset = 300) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= -offset &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-
-    // On scroll, check if each relevant element is in view
-    $(window).on("scroll", function () {
-      $(".player").each(function () {
-        if (isElementInViewport(this, 300)) {
-          $(this).addClass("show"); // Add the show class when in view
-        }
-      });
-
-      // Animate .section-discografia title with higher offset
-      if (isElementInViewport($(".section-discografia")[0], 300)) {
-        $(".section-discografia").addClass("show");
-      }
-
-      // Animate #biografia title with higher offset
-      if (isElementInViewport($("#biografia .titulo")[0], 300)) {
-        $("#biografia .titulo").addClass("show");
-      }
-
-      // Animate #biografia image and text with higher offset
-      if (isElementInViewport($("#biografia #imagen-bio")[0], 300)) {
-        $("#biografia #imagen-bio").addClass("show");
-      }
-      if (isElementInViewport($("#biografia #texto-bio")[0], 300)) {
-        $("#biografia #texto-bio").addClass("show");
-      }
-    });
-
-    // Initial check in case elements are already in view
-    $(window).trigger("scroll");
-  }
+// Initialize scroll animations on document ready
+$(document).ready(() => {
+  if ($(window).width() > 768) handleScrollAnimations();
 });
